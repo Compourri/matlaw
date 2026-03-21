@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matthee Prokureurs se POPIA nakomingshandleiding. Beskerming van persoonlike inligting in ooreenstemming met die Wet op die Beskerming van Persoonlike Inligting.">
+    <title>POPIA Nakomingshandleiding - Matthee Prokureurs Ing - Fochville</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="alternate" hreflang="en" href="../paia-manual.html">
+    <link rel="alternate" hreflang="x-default" href="./paia-manual.html">
+    <style>
+        .paia-page {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .paia-content {
+            background: rgba(9, 36, 21, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(22, 100, 50, 0.5);
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .paia-content h2 {
+            font-size: 24px;
+            color: var(--gold);
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--primary-green);
+            font-family: 'Marcellus SC', serif;
+        }
+
+        .paia-content h3 {
+            font-size: 18px;
+            color: var(--gold);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-family: 'Marcellus SC', serif;
+        }
+
+        .paia-content p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .paia-content ul {
+            list-style: none;
+            margin: 20px 0;
+            padding-left: 0;
+        }
+
+        .paia-content ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .paia-content ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .paia-content a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .paia-content a:hover {
+            color: var(--white);
+        }
+
+        .intro-box {
+            background: rgba(197, 157, 85, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .intro-box p {
+            margin-bottom: 0;
+        }
+
+        .element-box {
+            background: rgba(9, 36, 21, 0.5);
+            border: 1px solid rgba(22, 100, 50, 0.5);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .element-box h3 {
+            margin-top: 0;
+        }
+
+        .why-box {
+            background: rgba(197, 157, 85, 0.15);
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .why-box h2 {
+            border-bottom: none;
+            margin-top: 0;
+        }
+
+        .why-box ul li::before {
+            background: var(--white);
+        }
+
+        .contact-box {
+            background: rgba(197, 157, 85, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+        }
+
+        .contact-box p {
+            margin-bottom: 10px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 30px;
+            font-family: 'Marcellus SC', serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 10px 25px;
+            background-color: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .btn-back:hover {
+            background-color: var(--gold);
+            color: var(--dark-green);
+        }
+
+        .last-updated {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--primary-green);
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .paia-page {
+                padding: 40px 20px;
+            }
+
+            .paia-content {
+                padding: 30px 25px;
+            }
+
+            .paia-content h2 {
+                font-size: 20px;
+            }
+
+            .paia-content h3 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Slaan na hoofinhoud</a>
+    <div id="top-bar">
+        <div class="top-bar-content">
+            <span class="phone">
+                <i class="fa fa-phone"></i>
+                <a href="tel:+27187712041">018 771 2041</a>
+            </span>
+            <a href="../paia-manual.html"><button type="button" class="lang-toggle">English</button></a>
+        </div>
+    </div>
+
+    <header id="site-header">
+        <div class="header-inner">
+            <div id="site-logo">
+                <a href="index.html"><img src="images/matprok.webp" alt="Matthee Prokureurs"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Tuis</a></li>
+                    <li class="has-submenu">
+                        <a href="index.html#services">Dienste</a>
+                        <ul class="submenu">
+                            <li><a href="conveyancing.html">Aktebesorging</a></li>
+                            <li><a href="notary.html">Notaris</a></li>
+                            <li><a href="personallaw.html">Persoonlike Reg</a></li>
+                            <li><a href="valuer.html">Geassosieerde Waardeerder</a></li>
+                            <li><a href="appraiser.html">Taksateur</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#about">Oor Ons</a></li>
+                    <li class="has-submenu">
+                        <a href="history.html">Geskiedenis</a>
+                        <ul class="submenu">
+                            <li><a href="history.html">Ons Geskiedenis</a></li>
+                            <li><a href="fochville.html">Fochville</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>POPIA Nakomingshandleiding</h1>
+            <p>Beskerming van Persoonlike Inligting</p>
+        </div>
+    </section>
+
+    <section class="paia-page">
+        <a href="index.html" class="btn-back">Terug na Tuis</a>
+
+        <div class="paia-content">
+            <div class="intro-box">
+                <p>Die POPIA Nakomingshandleiding demonstreer Matthee Prokureurs se verbintenis om persoonlike inligting te beskerm in ooreenstemming met Suid-Afrika se Wet op die Beskerming van Persoonlike Inligting (POPIA). Hierdie handleiding bevat ons interne prosesse, beleide en waarborgmaatreëls om te verseker dat alle persoonlike data wat ons hanteer, wetlik, veilig en deursigtig verwerk word.</p>
+                <p style="margin-bottom: 0;">As 'n regs firma hanteer ons sensitiewe kliënt- en derdeparty-inligting daagliks. Ons POPIA Nakomingshandleiding dokumenteer ons interne kontroles, personeelverantwoordelikhede en operasionele prosedures, wat our toewyding aan privaatheid, datasekuriteit en regulatoriese nakoming beklemtoon.</p>
+            </div>
+
+            <h2>Begrip van POPIA Nakoming</h2>
+            <p>Die POPIA wet die how persoonlike inligting ingesamel, gestoor, verwerk en gedeel word. Nie-nakoming kan resultateer in boetes, reputasie-risiko of regsstrawwe. By Matthee Prokureurs neem ons nakoming ernstig op en het 'n gestruktureerde handleiding geïmplementeer om te verseker dat our bedrywighede ten volle aan die wet voldoen.</p>
+
+            <p>Ons handleiding fokus op:</p>
+            <ul>
+                <li>Veillige en wetlike hantering van kliënt- en derdeparty-inligting</li>
+                <li>Personeelverantwoordelikheid vir die verwerking van persoonlike data</li>
+                <li>Dokumentasie van ons nakomingsbeleide en prosedures</li>
+            </ul>
+
+            <p>Vir regulatoriese konteks, sien die <a href="https://www.justice.gov.za/inforeg/" target="_blank" rel="noopener">Inligtingsreguleerder Suid-Afrika</a>.</p>
+
+            <h2>Kernelemente van Ons POPIA Nakomingshandleiding</h2>
+
+            <div class="element-box">
+                <h3>1. Bestuur en Verantwoordbaarheid</h3>
+                <p>Duidelike rolle en verantwoordelikhede word binne die firma toegewys om verantwoordbaarheid vir POPIA-nakoming te verseker. Senior bestuur toepsig oor die nakoming van die Wet en handhaaf bestuur oor alle hantering van persoonlike inligting.</p>
+            </div>
+
+            <div class="element-box">
+                <h3>2. Data Kartering en Inventaris</h3>
+                <p>Alle persoonlike inligting wat deur Matthee Prokureurs verwerk word, word geïdentifiseer en aangeteken. Dit sluit in kliënte-lêers, derdeparty-inligting en interne personeeldata, wat verseker dat alle datavloei bekend is en veilig bestuur word.</p>
+            </div>
+
+            <div class="element-box">
+                <h3>3. Wetlike Verwerking</h3>
+                <p>Ons handleiding spesifikseer wetlike gronde vir die verwerking van persoonlike inligting, insluitend kontraktuele noodsaaklikheid, regsverpligting en uitdruklike toestemming van kliënte.</p>
+            </div>
+
+            <div class="element-box">
+                <h3>4. Sekuriteitswaarborgmaatreëls</h3>
+                <p>Tegniese en organisatoriese maatreëls beskerm alle persoonlike inligting teen verlies, ongemagtigde toegang of skendings. Beleide sluit in veilige berging, enkripsie, beheerde toegang en insident-reaksie prosedures.</p>
+            </div>
+
+            <div class="element-box">
+                <h3>5. Personeel Bewustheid en Opleiding</h3>
+                <p>Alle spanlede ontvang gereelde opleiding oor POPIA-nakoming, wat verseker dat hulle hul verantwoordelikhede en die belangrikheid van die beskerming van persoonlike data verstaan.</p>
+            </div>
+
+            <div class="element-box">
+                <h3>6. Privaatheidsbeleide en Kennisgewings</h3>
+                <p>Matthee Prokureurs handhaaf duidelike interne privaatheidsbeleide en stel kliënte in kennis van hoe hul data gebruik en beskerm word in lyn met POPIA-vereistes.</p>
+            </div>
+
+            <div class="element-box">
+                <h3>7. Monitering en Ouditering</h3>
+                <p>Gereelde hersienings en interne oudits word uitgevoer om nakoming met die POPIA Wet te verifieer. Dit sluit in insident-volging en regstellende maatreëls waar nodig.</p>
+            </div>
+
+            <h2>Waarom Dit Saak Maak</h2>
+            <p>Die POPIA Nakomingshandleiding beklemtoon Matthee Prokureurs se toewyding aan professionele, veilige en nakomende regsdiens.</p>
+
+            <div class="why-box">
+                <h2>Deur hierdie interne beleide en prosesse te implementeer, verseker ons firma:</h2>
+                <ul>
+                    <li>Persoonlike data word verantwoordelik hanteer</li>
+                    <li>Verantwoordbaarheid en deursigtigheid teenoor kliënte word gedemonstreer</li>
+                    <li>Ten volle nakoming met Suid-Afrikaanse databeskermingswette</li>
+                    <li>Vertroue in our regspraktyk word versterk</li>
+                </ul>
+            </div>
+
+            <p>Verwante dienste waar POPIA-nakoming kritiek is, sluit in <a href="personallaw.html">Persoonlike Reg</a> en <a href="notary.html">Notarisdiens</a>.</p>
+
+            <h2>Verbintenis tot Privaatheid en Nakoming</h2>
+            <p>Ons POPIA Nakomingshandleiding is 'n interne raamwerk wat demonstreer hoe Matthee Prokureurs kliënt- en derdeparty-inligting beveilig. Dit weerspieël our voortdurende verbintenis tot regs nakoming, etiese praktyk en verantwoordelike hantering van sensitiewe data.</p>
+
+            <p>Deur streng nakoming van die POPIA Wet te handhaaf, verseker Matthee Prokureurs kliënte dat hul persoonlike inligting te alle tye professioneel, veilig en wetlik bestuur word.</p>
+
+            <div class="contact-box">
+                <h3>Kontakinligting</h3>
+                <p><strong>Matthee Prokureurs Ing</strong></p>
+                <p>Kerkstraat 49, Fochville 2515</p>
+                <p>Tel: <a href="tel:+27187712041">+27 18 771 2041</a></p>
+                <p>E-pos: <a href="mailto:dawid@matlaw.africa">dawid@matlaw.africa</a></p>
+            </div>
+
+            <p class="last-updated">Laaste opgedateer: 20 Maart 2026</p>
+        </div>
+    </section>
+    </main>
+
+    <footer id="footer-widgets">
+        <div class="footer-inner">
+            <div class="footer-box">
+                <h4>Kontak Ons</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa fa-phone"></i>
+                        <span><a href="tel:+27187712041">018 771 2041</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-envelope"></i>
+                        <span><a href="mailto:info@matlaw.africa">info@matlaw.africa</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-map-marker-alt"></i>
+                        <span>Fochville, Suid-Afrika</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h4>Vinnige Skakels</h4>
+                <ul>
+                    <li><a href="index.html">Tuis</a></li>
+                    <li><a href="index.html#services">Dienste</a></li>
+                    <li><a href="index.html#about">Oor Ons</a></li>
+                    <li><a href="history.html">Geskiedenis</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                    <li><a href="privacy-policy.html">Privaatheidsbeleid</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h4>Kantoorure</h4>
+                <p>Maandag - Vrydag: 09:00 - 17:00</p>
+                <p>Saterdag: Volgens afspraak</p>
+                <p>Sondag: Geslote</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="footer-bottom">
+        <p>&copy; 2026 Matthee Prokureurs Ing. Alle regte voorbehou. | Web ontwerp deur <a href="https://compourri.co.za" target="_blank" rel="noopener">Compourri</a></p>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="../js/script.js" defer></script>
+</body>
+</html>

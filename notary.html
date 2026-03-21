@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional notary services in Fochville. Matthee Attorneys provides document certification, powers of attorney, and legal notarizations.">
+    <title>Notary Services - Matthee Attorneys Inc - Fochville</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <link rel="alternate" hreflang="af" href="./afr/notary.html">
+    <link rel="alternate" hreflang="x-default" href="./notary.html">
+    <style>
+        .service-page {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+
+        .service-hero-image {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+        }
+
+        .service-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .service-hero-content h1 {
+            font-size: 36px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .service-hero-content p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .service-section {
+            background: rgba(9, 36, 21, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(22, 100, 50, 0.5);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .service-section h2 {
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--primary-green);
+        }
+
+        .service-section p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-section ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .service-section ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .service-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .service-section a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .service-section a:hover {
+            color: var(--white);
+        }
+
+        .highlight-box {
+            background: rgba(197, 157, 85, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .highlight-box ul li::before {
+            background: var(--white);
+        }
+
+        .cta-box {
+            text-align: center;
+            padding: 50px 40px;
+            background: rgba(9, 36, 21, 0.8);
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .cta-box h2 {
+            font-size: 28px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .cta-box p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            font-family: 'Marcellus SC', serif;
+            font-size: 15px;
+            letter-spacing: 1px;
+            padding: 15px 40px;
+            background-color: var(--gold);
+            color: var(--dark-green);
+            border: 1px solid var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--gold);
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 30px;
+            font-family: 'Marcellus SC', serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 10px 25px;
+            background-color: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .btn-back:hover {
+            background-color: var(--gold);
+            color: var(--dark-green);
+        }
+
+        @media (max-width: 992px) {
+            .service-hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .service-hero-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-page {
+                padding: 40px 20px;
+            }
+
+            .service-hero-content h1 {
+                font-size: 28px;
+            }
+
+            .service-section {
+                padding: 30px 25px;
+            }
+
+            .service-section h2 {
+                font-size: 20px;
+            }
+
+            .cta-box {
+                padding: 40px 25px;
+            }
+
+            .cta-box h2 {
+                font-size: 24px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn-primary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="top-bar">
+        <div class="top-bar-content">
+            <span class="phone">
+                <i class="fa fa-phone"></i>
+                <a href="tel:+27187712041">018 771 2041</a>
+            </span>
+            <a href="./afr/notary.html"><button type="button" class="lang-toggle">Afrikaans</button></a>
+        </div>
+    </div>
+
+    <header id="site-header">
+        <div class="header-inner">
+            <div id="site-logo">
+                <a href="index.html"><img src="./images/mattheelogo.webp" alt="Matthee Attorneys"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="index.html#services">Services</a>
+                        <ul class="submenu">
+                            <li><a href="conveyancing.html">Conveyancing</a></li>
+                            <li><a href="notary.html">Notary</a></li>
+                            <li><a href="personallaw.html">Personal Law</a></li>
+                            <li><a href="valuer.html">Associated Valuer</a></li>
+                            <li><a href="appraiser.html">Appraiser</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Notary Services</h1>
+            <p>Professional notarial services in Fochville</p>
+        </div>
+    </section>
+
+    <section class="service-page">
+        <a href="index.html" class="btn-back">Back to Home</a>
+
+        <div class="service-hero">
+            <div class="service-hero-content">
+                <h1>Notary Services You Can Trust</h1>
+                <p>Notary services are essential for certifying documents, authenticating contracts, and ensuring legal compliance. At Matthee Attorneys Inc, our experienced notaries provide reliable, professional services for individuals and businesses in Fochville and across Gauteng.</p>
+                <p>We handle contracts, affidavits, powers of attorney, property documents, and estate-related documentation. With attention to detail and full legal compliance, we make the process straightforward.</p>
+            </div>
+            <div class="service-hero-image">
+                <img src="./images/notary.webp" alt="Notary Services">
+            </div>
+        </div>
+
+        <div class="service-section">
+            <h2>Our Comprehensive Notary Services</h2>
+        </div>
+
+        <div class="service-section">
+            <h2>Document Certification and Authentication</h2>
+            <p>We certify and authenticate documents to ensure they are legally valid and recognised by authorities. Whether for business, property, or personal matters, our notaries handle each case with precision.</p>
+            <ul>
+                <li>Certification of copies</li>
+                <li>Verification of signatures</li>
+                <li>Document authentication</li>
+            </ul>
+            <p>For related services, see our <a href="personallaw.html">Personal Law</a> page.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Powers of Attorney</h2>
+            <p>A power of attorney grants someone legal authority to act on your behalf. We draft, notarise, and register powers of attorney that are legally binding and fully compliant.</p>
+            <ul>
+                <li>General powers of attorney</li>
+                <li>Special powers for property or financial matters</li>
+                <li>Advice on revocation and amendments</li>
+            </ul>
+            <p>For official requirements, visit the <a href="https://www.justice.gov.za/dept/office/powerofattorney.html" target="_blank" rel="noopener">Department of Justice</a>.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Property and Conveyancing Documents</h2>
+            <p>Notarisation is often required in property transactions. Our notary services complement our conveyancing expertise.</p>
+            <ul>
+                <li>Deeds, contracts, and property agreements</li>
+                <li>Notarising affidavits and declarations</li>
+                <li>Liaising with the Deeds Office</li>
+            </ul>
+            <p>Learn more about our <a href="conveyancing.html">conveyancing services</a>.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Wills, Trusts, and Estate Documents</h2>
+            <p>We also handle estate-related documentation. Notarising these documents ensures legal recognition and reduces potential disputes.</p>
+            <ul>
+                <li>Notarising wills and testamentary documents</li>
+                <li>Trust agreements and fiduciary documents</li>
+                <li>Affidavits for deceased estates</li>
+            </ul>
+            <p>For official guidelines, visit the <a href="https://www.justice.gov.za/master/" target="_blank" rel="noopener">Master of the High Court</a>.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Why Choose Matthee Attorneys?</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li>Experienced notary service providers</li>
+                    <li>Fast, accurate, and professional handling</li>
+                    <li>Legal compliance with South African law</li>
+                    <li>Personalised service for all clients</li>
+                </ul>
+            </div>
+            <p>We combine legal expertise with practical service. Our goal is to make every notarisation simple, efficient, and reliable.</p>
+        </div>
+
+        <div class="cta-box">
+            <h2>Contact Us Today</h2>
+            <p>Whether you need document certification, powers of attorney, property documents, or estate notarisation, our team is ready to assist.</p>
+            <div class="btn-group">
+                <a href="contact.html" class="btn-primary">Get in Touch Today</a>
+            </div>
+        </div>
+            <div class="service-hero-image">
+                <img src="./images/notary.webp" alt="Notary Services">
+            </div>
+        </div>
+
+        <div class="service-section">
+            <h2>Our Comprehensive Notary Services</h2>
+        </div>
+
+        <div class="service-section">
+            <h2>Document Certification and Authentication</h2>
+            <p>We certify and authenticate important documents to ensure they are legally valid and recognised by authorities. Whether for business, property transactions, or personal matters, our notaries handle each case with precision.</p>
+            <ul>
+                <li>Certification of copies</li>
+                <li>Verification of signatures</li>
+                <li>Document authentication for legal and administrative purposes</li>
+            </ul>
+            <p>For related legal services, see our <a href="personallaw.html">Personal Law</a> page.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Powers of Attorney</h2>
+            <p>A power of attorney gives someone legal authority to act on your behalf. We draft, notarise, and register powers of attorney that are legally binding and fully compliant.</p>
+            <ul>
+                <li>General powers of attorney</li>
+                <li>Special powers of attorney for property or financial matters</li>
+                <li>Advice on revocation and amendments</li>
+            </ul>
+            <p>For official requirements, visit the <a href="https://www.justice.gov.za/dept/office/powerofattorney.html" target="_blank" rel="noopener">Department of Justice – Powers of Attorney</a>.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Property and Conveyancing Documents</h2>
+            <p>Notarisation is often required in property transactions to ensure documents are legally enforceable. Our notary services complement our property and conveyancing expertise.</p>
+            <ul>
+                <li>Deeds, contracts, and property agreements</li>
+                <li>Notarising affidavits and statutory declarations</li>
+                <li>Liaising with the Deeds Office when required</li>
+            </ul>
+            <p>Learn more about our <a href="conveyancing.html">conveyancing services</a>.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Wills, Trusts, and Estate Documents</h2>
+            <p>We also handle estate-related documentation. Notarising these documents ensures they are legally recognised and reduces potential disputes.</p>
+            <ul>
+                <li>Notarising wills and testamentary documents</li>
+                <li>Trust agreements and fiduciary documents</li>
+                <li>Affidavits for deceased estates</li>
+            </ul>
+            <p>For official guidelines, visit the <a href="https://www.justice.gov.za/master/" target="_blank" rel="noopener">Master of the High Court</a>.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Why Choose Matthee Attorneys?</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li>Experienced notary service providers</li>
+                    <li>Fast, accurate, and professional document handling</li>
+                    <li>Legal compliance with South African statutes</li>
+                    <li>Personalised service for individuals and businesses</li>
+                </ul>
+            </div>
+            <p>We combine legal expertise with practical service to provide peace of mind. Our goal is to make every notarisation simple, efficient, and reliable.</p>
+        </div>
+
+        <div class="cta-box">
+            <h2>Contact Us Today</h2>
+            <p>Whether you need document certification, powers of attorney, property documents, or estate-related notarisation, our team is ready to assist.</p>
+            <div class="btn-group">
+                <a href="contact.html" class="btn-primary">Get in Touch Today</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer-widgets">
+        <div class="footer-inner">
+            <div class="footer-box">
+                <h4>Contact Us</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa fa-phone"></i>
+                        <span><a href="tel:+27187712041">018 771 2041</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-envelope"></i>
+                        <span><a href="mailto:info@matlaw.africa">info@matlaw.africa</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-map-marker-alt"></i>
+                        <span>Fochville, South Africa</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h4>Office Hours</h4>
+                <p>Monday - Friday: 09:00 - 17:00</p>
+                <p>Saturday: By appointment</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="footer-bottom">
+        <p>&copy; 2026 Matthee Attorneys Inc. All rights reserved. | Web design by <a href="https://compourri.co.za" target="_blank" rel="noopener">Compourri</a></p>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="js/script.js" defer></script>
+</body>
+</html>

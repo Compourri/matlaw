@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professionele eiendomswaarderingdienste in Fochville. Matthee Prokureurs verskaf onafhanklike waardasies vir verkope, herfinansiering en boedelbeplanning.">
+    <title>Geassosieerde Waardeerder - Matthee Prokureurs Ing - Fochville</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="alternate" hreflang="en" href="../valuer.html">
+    <link rel="alternate" hreflang="x-default" href="./valuer.html">
+    <style>
+        .service-page {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+
+        .service-hero-image {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+        }
+
+        .service-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .service-hero-content h1 {
+            font-size: 36px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .service-hero-content p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .service-section {
+            background: rgba(9, 36, 21, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(22, 100, 50, 0.5);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .service-section h2 {
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--primary-green);
+        }
+
+        .service-section p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-section ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .service-section ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .service-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .service-section a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .service-section a:hover {
+            color: var(--white);
+        }
+
+        .highlight-box {
+            background: rgba(197, 157, 85, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .highlight-box ul li::before {
+            background: var(--white);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 25px 15px;
+            background: rgba(9, 36, 21, 0.5);
+            border-radius: 8px;
+            border: 1px solid rgba(22, 100, 50, 0.3);
+        }
+
+        .process-step h4 {
+            font-size: 16px;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-family: 'Marcellus SC', serif;
+        }
+
+        .process-step p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0;
+        }
+
+        .cta-box {
+            text-align: center;
+            padding: 50px 40px;
+            background: rgba(9, 36, 21, 0.8);
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .cta-box h2 {
+            font-size: 28px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .cta-box p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            font-family: 'Marcellus SC', serif;
+            font-size: 15px;
+            letter-spacing: 1px;
+            padding: 15px 40px;
+            background-color: var(--gold);
+            color: var(--dark-green);
+            border: 1px solid var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--gold);
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 30px;
+            font-family: 'Marcellus SC', serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 10px 25px;
+            background-color: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .btn-back:hover {
+            background-color: var(--gold);
+            color: var(--dark-green);
+        }
+
+        @media (max-width: 992px) {
+            .service-hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .service-hero-image {
+                order: -1;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-page {
+                padding: 40px 20px;
+            }
+
+            .service-hero-content h1 {
+                font-size: 28px;
+            }
+
+            .service-section {
+                padding: 30px 25px;
+            }
+
+            .service-section h2 {
+                font-size: 20px;
+            }
+
+            .cta-box {
+                padding: 40px 25px;
+            }
+
+            .cta-box h2 {
+                font-size: 24px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn-primary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Slaan na hoofinhoud</a>
+    <div id="top-bar">
+        <div class="top-bar-content">
+            <span class="phone">
+                <i class="fa fa-phone"></i>
+                <a href="tel:+27187712041">018 771 2041</a>
+            </span>
+            <a href="../valuer.html"><button type="button" class="lang-toggle">English</button></a>
+        </div>
+    </div>
+
+    <header id="site-header">
+        <div class="header-inner">
+            <div id="site-logo">
+                <a href="index.html"><img src="images/matprok.webp" alt="Matthee Prokureurs"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Tuis</a></li>
+                    <li class="has-submenu">
+                        <a href="index.html#services">Dienste</a>
+                        <ul class="submenu">
+                            <li><a href="conveyancing.html">Aktebesorging</a></li>
+                            <li><a href="notary.html">Notaris</a></li>
+                            <li><a href="personallaw.html">Persoonlike Reg</a></li>
+                            <li><a href="valuer.html">Geassosieerde Waardeerder</a></li>
+                            <li><a href="appraiser.html">Taksateur</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#about">Oor Ons</a></li>
+                    <li class="has-submenu">
+                        <a href="history.html">Geskiedenis</a>
+                        <ul class="submenu">
+                            <li><a href="history.html">Ons Geskiedenis</a></li>
+                            <li><a href="fochville.html">Fochville</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Geassosieerde Waardeerder</h1>
+            <p>Professionele eiendomswaarderingdienste</p>
+        </div>
+    </section>
+
+    <section class="service-page">
+        <a href="index.html" class="btn-back">Terug na Tuis</a>
+
+        <div class="service-hero">
+            <div class="service-hero-content">
+                <h1>Geassosieerde Waardeerder – Betroubare Eiendomswaardasies</h1>
+                <p>Betroubare eiendomswaardasies is noodsaaklik vir ingeligte besluite. By Matthee Prokureurs Inc werk ons met ervare, gekwalifiseerde waardeerders om onafhanklike, regs-nakomende verslae te lewer vir boedelbeplanning, transport, verkope en finansiële transaksies.</p>
+                <p>Of u eiendom koop of verkoop, 'n boedel afhandel, herfinansier of 'n dispuut oplos, akkurate waardasies is deurslaggewend. Ons verseker dat elke verslag deeglik, presies en aanvaar word vir regs- en finansiële doeleindes.</p>
+            </div>
+            <div class="service-hero-image">
+                <img src="../images/valuer.webp" alt="Eiendomswaardering Dienste">
+            </div>
+        </div>
+
+        <div class="service-section">
+            <h2>Ons Waarderingdienste</h2>
+        </div>
+
+        <div class="service-section">
+            <h2>Eiendomsoordragte en Verkope</h2>
+            <p>Akkurate waardasies help kopers en verkopers om ingeligte besluite te neem. Ons verseker regverdige en deursigtige eiendomsoordragte.</p>
+            <ul>
+                <li>Markwaarde assessering</li>
+                <li>Ondersteuning vir verkoopooreenkoms hersiening</li>
+                <li>Registrasie ondersteuning vir transport</li>
+            </ul>
+            <p>Vir naatlose eiendomsoordragte, sien ons <a href="conveyancing.html">transportdienste</a>.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Boedel- en Prokurasie Waardasies</h2>
+            <p>Eiendomswaardasies word vereis vir die administrasie van bestorwe boedels. Ons verskaf onafhanklike verslae wat deur die Meester van die Hooggeregshof aanvaar word vir gladde boedeladministrasie en regs nakoming.</p>
+            <p>Vir amptelike leiding, besoek die <a href="https://www.justice.gov.za/master/" target="_blank" rel="noopener">Meester van die Hooggeregshof</a>.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Verband- en Hipoteekwaardasies</h2>
+            <p>Leners vereis professionele waardasies voor die goedkeuring van verbande. Ons verslae voldoen aan banke en finansiële instellings vir vinnige leningverwerking.</p>
+            <p>Leer meer oor eiendomstransaksies via ons <a href="conveyancing.html">transportdienste</a>.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Regs- en Dispuut Ondersteuning</h2>
+            <p>In eiendomsdispute verskaf onafhanklike waardasies helderheid en regsgewig. Ons verslae ondersteun regsprosesse, insluitend familiereg, boedeldispute en kommersiële sake.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Waarom Ons Kies?</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li>Onafhanklike, professionele en akkurate verslae</li>
+                    <li>Nakoming met Suid-Afrikaanse wetgewing en Aktekantoor vereistes</li>
+                    <li>Duidelike verduidelikings en praktiese advies</li>
+                    <li>Verslae vir transport, boedel, herfinansiering of dispute</li>
+                </ul>
+            </div>
+            <p>Ons waardasies verskaf vertroue en gemoedsrus, wat u help om ingeligte besluite te neem wat gerugsteun word deur presiese, regs-nakomende verslae.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Ons Proses</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <h4>Assessering</h4>
+                    <p>Perseel-besoeke of dataversameling</p>
+                </div>
+                <div class="process-step">
+                    <h4>Ontleding</h4>
+                    <p>Markvergelyking en nakomingstoets</p>
+                </div>
+                <div class="process-step">
+                    <h4>Verslag</h4>
+                    <p>Professionele verslaglewering</p>
+                </div>
+                <div class="process-step">
+                    <h4>Ondersteuning</h4>
+                    <p>Leiding oor die gebruik van die waardasie</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h2>Bespoor U Waardasie Vandag</h2>
+            <p>Vir eiendomsverkope, herfinansiering, boedelbeplanning of regsake, staat op ons Geassosieerde Waardeerder dienste vir akkurate, onafhanklike waardasies.</p>
+            <div class="btn-group">
+                <a href="contact.html" class="btn-primary">Bespoor U Waardasie Nou</a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer id="footer-widgets">
+        <div class="footer-inner">
+            <div class="footer-box">
+                <h4>Kontak Ons</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa fa-phone"></i>
+                        <span><a href="tel:+27187712041">018 771 2041</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-envelope"></i>
+                        <span><a href="mailto:info@matlaw.africa">info@matlaw.africa</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-map-marker-alt"></i>
+                        <span>Fochville, Suid-Afrika</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h4>Vinnige Skakels</h4>
+                <ul>
+                    <li><a href="index.html">Tuis</a></li>
+                    <li><a href="index.html#services">Dienste</a></li>
+                    <li><a href="index.html#about">Oor Ons</a></li>
+                    <li><a href="history.html">Geskiedenis</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                    <li><a href="privacy-policy.html">Privaatheidsbeleid</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h4>Kantoorure</h4>
+                <p>Maandag - Vrydag: 09:00 - 17:00</p>
+                <p>Saterdag: Volgens afspraak</p>
+                <p>Sondag: Geslote</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="footer-bottom">
+        <p>&copy; 2026 Matthee Prokureurs Ing. Alle regte voorbehou. | Web ontwerp deur <a href="https://compourri.co.za" target="_blank" rel="noopener">Compourri</a></p>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="../js/script.js" defer></script>
+</body>
+</html>

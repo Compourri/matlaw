@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Die geskiedenis van Fochville, 'n dorp in die Wes-Transvaal. Ontdek die ontstaan en ontwikkeling van Fochville vanaf 1836 tot vandag.">
+    <title>Fochville Geskiedenis - Matthee Prokureurs Ing - Fochville</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <style>
+        .fochville-page {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fochville-page h1 {
+            font-size: 36px;
+            color: var(--gold);
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Marcellus SC', serif;
+        }
+
+        .fochville-content {
+            background: rgba(9, 36, 21, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(22, 100, 50, 0.5);
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .fochville-content p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .history-image {
+            float: right;
+            margin: 0 0 20px 25px;
+            width: 350px;
+            background: rgba(9, 36, 21, 0.5);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--primary-green);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .history-image:hover {
+            border-color: var(--gold);
+            transform: scale(1.02);
+        }
+
+        .history-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .history-image figcaption {
+            padding: 12px 15px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            font-style: italic;
+        }
+
+        .history-image-left {
+            float: left;
+            margin: 0 25px 20px 0;
+        }
+
+        .history-images-row {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            clear: both;
+        }
+
+        .history-images-row .history-image {
+            float: none;
+            margin: 0;
+            width: auto;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 30px;
+            font-family: 'Marcellus SC', serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 10px 25px;
+            background-color: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .btn-back:hover {
+            background-color: var(--gold);
+            color: var(--dark-green);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 8px;
+            border: 3px solid var(--gold);
+        }
+
+        .lightbox-caption {
+            text-align: center;
+            color: white;
+            padding: 15px;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .fochville-page {
+                padding: 40px 20px;
+            }
+
+            .fochville-page h1 {
+                font-size: 28px;
+            }
+
+            .fochville-content {
+                padding: 30px 25px;
+            }
+
+            .history-image {
+                float: none;
+                width: 100%;
+                margin: 0 0 20px 0;
+            }
+
+            .history-image-left {
+                float: none;
+                margin: 0 0 20px 0;
+            }
+
+            .history-images-row {
+                flex-direction: column;
+            }
+
+            .history-images-row .history-image {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Slaan na hoofinhoud</a>
+    <div id="top-bar">
+        <div class="top-bar-content">
+            <span class="phone">
+                <i class="fa fa-phone"></i>
+                <a href="tel:+27187712041">018 771 2041</a>
+            </span>
+            <a href="/"><button type="button" class="lang-toggle">English</button></a>
+        </div>
+    </div>
+
+    <header id="site-header">
+        <div class="header-inner">
+            <div id="site-logo">
+                <a href="index.html"><img src="images/matprok.webp" alt="Matthee Prokureurs"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Tuis</a></li>
+                    <li class="has-submenu">
+                        <a href="index.html#services">Dienste</a>
+                        <ul class="submenu">
+                            <li><a href="conveyancing.html">Aktebesorging</a></li>
+                            <li><a href="notary.html">Notaris</a></li>
+                            <li><a href="personallaw.html">Persoonlike Reg</a></li>
+                            <li><a href="valuer.html">Geassosieerde Waardeerder</a></li>
+                            <li><a href="appraiser.html">Taksateur</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#about">Oor Ons</a></li>
+                    <li class="has-submenu">
+                        <a href="history.html">Geskiedenis</a>
+                        <ul class="submenu">
+                            <li><a href="history.html">Ons Geskiedenis</a></li>
+                            <li><a href="fochville.html">Fochville</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Fochville</h1>
+            <p>'n Oorsig van Ontstaan en Ontwikkeling</p>
+        </div>
+    </section>
+
+    <section class="fochville-page">
+        <a href="index.html" class="btn-back">Terug na Tuis</a>
+
+        <div class="fochville-content clearfix">
+            <figure class="history-image" onclick="openLightbox(this)">
+                <img src="images/polisiestasie.webp" alt="Ou Polisiestasie">
+                <figcaption>Ou Polisiestasie op die hoek van Steyn en Presidentstraat. Oos Aansig</figcaption>
+            </figure>
+
+            <p>Fochville is geleë op die hoofroete tussen Johannesburg en Potchefstroom. Die dorp word omring deur die Wes-Transvaalse myndorpe Carletonville en Westonaria in die noorde, en die rustige Vrystaatse dorp Parys, sowat 40 km suid. Dit plaas Fochville binne maklike bereik van sowel die Goudstad as die Vaaldriehoek.</p>
+
+            <p>Met 'n tipiese Hoëveldklimaat en 'n oorvloed inheemse bome en struike, vertoon Fochville soos 'n groen oase, omraam deur die Losberg- en Gatsrandrante.</p>
+
+            <p><strong>Vroeë Vestiging</strong></p>
+
+            <p>Reeds in 1836 vestig die eerste boer, mnr. Harmse, hom op die plaas Buffeldoorns. In ongeveer 1852 ontvang mnr. Erasmus as eerste grondeienaar amptelike kaart en transport van die Zuid-Afrikaanse Republiek, en bou 'n woonhuis aan die voet van die Losberg.</p>
+
+            <p>In 1857 koop mnr. Dreyer die plaas Kraalkop, ongeveer 4 000 morg groot, vir 750 riksdaalders. Die naam "Kraalkop" verwys na die talle krale wat op die omliggende koppies aangetref is. In dieselfde tydperk word die plaas Sandfontein teen 'n soortgelyke bedrag aangekoop.</p>
+
+            <p>Met verloop van tyd word die omliggende plase bewoon en bewerk deur families soos die Schuttes, Dreyers, Vermaases, Du Plessis'e en Pienaars. Teen 1900 bestaan daar reeds twee skole in die omgewing: een op Buffeldoorns en een aan die voet van die Losberg.</p>
+
+            <p><strong>Stigting van die Dorp</strong></p>
+
+            <p>Fochville word in 1920 amptelik as dorp geproklameer. Die dorpsgebied beslaan ongeveer 900 hektaar munisipale grond, geleë op dele van die plase Leeuwspruit en Kraalkop, wat onderskeidelik aan die Pretorius-familie en mev. Bertha Bosman behoort het.</p>
+
+            <p>Die grond is aangekoop teen ses pond tien sjielings (R13) per morg en in erwe opgedeel. Die dorp se ontstaan word grootliks toegeskryf aan twee Joodse sakemanne, mnre. Wulfsohn en Horvitz, na wie daar vandag nog strate vernoem is.</p>
+
+            <p>Verskeie moontlike liggings vir die dorp is aanvanklik oorweeg, onder andere langs die spruit waar 'n opgaardam gebou kon word. Gebiede soos Weltevrede, Elandsfontein en die omgewing van die huidige stasie was ook onder oorweging.</p>
+
+            <p>Uiteindelik is daar tydens 'n vergadering op die plaas van mnr. Theunie Steyn op die huidige ligging besluit. Bekende inhabitants soos Piet Davidtz, Helgaardt du Preez en die broers Gawie en Johan Klein was teenwoordig. Weens siekte van die oorspronklike landmeter het mnr. Ellik Steyn die opmeting van die erwe oorgeneem.</p>
+
+            <figure class="history-image history-image-left" onclick="openLightbox(this)">
+                <img src="images/voortrekkers.webp" alt="Voortrekkers Hoofkwartiere">
+                <figcaption>Polisiestasie op die hoek van Steyn en Presidentstraat het ook gedien as die Voortrekkers se hoofkwartiere.</figcaption>
+            </figure>
+
+            <p><strong>Vroeë Groei en Ontwikkeling</strong></p>
+
+            <p>Na proklamasie vestig verskeie handelaars hul besighede op die dorp. Pioniers soos Horvitz, Wulfsohn en Barney Kretchmar speel 'n sleutelrol in die vroeë ekonomiese ontwikkeling. Presidentstraat ontwikkel as die hoofhandelsentrum, en Fochville begin geleidelik groei.</p>
+
+            <p>In 1951 verkry die dorp munisipale status. Die eerste verkose raadslede sluit in dr. J. T. Roux (voorsitter), asook mnre. H. Ferreira, F. Postma en dr. R. E. Dunning. Binne twee jaar word elektrisiteit aangelê en munisipale kantore opgerig.</p>
+
+            <p>In 1962 word die gebied ingevolge wetgewing as 'n voorgeskrewe gebied verklaar. Die daaropvolgende jaar bou Western Deep Levels 250 woonhuise in die sentrale deel van die dorp, wat verdere groei aanspoor.</p>
+
+            <p>Namate die dorp ontwikkel, raak die plaaslike watervoorsiening onvoldoende, en daar word oorgeskakel na die Randwaterraad om aan die toenemende vraag te voldoen.</p>
+
+            <p>Vyftien jaar later word Fochville tot stadsraadstatus verhoog. Die eerste burgemeester was mnr. J. A. de Lange, saam met 'n span raadslede wat 'n belangrike rol in die dorp se uitbreiding gespeel het.</p>
+
+            <p><strong>Openbare Dienste en Gemeenskapslewe</strong></p>
+
+            <p>Soos in baie ontwikkelende nedersettings, het die dorp se groei 'n natuurlike volgorde gevolg: eers wet en orde, daarna onderwys en gesondheidsdienste.</p>
+
+            <p>Die eerste polisiestasie was by Kraalkop geleë. Ene Lerm was die eerste posbevelvoerder, gevolg deur konstabels Quinn en Piet Benade. Saam met vrederegter Davidtz het hulle orde gehandhaaf in 'n dorp wat aanvanklik slegs uit een winkel en 'n handjievol huise bestaan het.</p>
+
+            <p>Tydens 'n hofsaak het vrederegter Davidtz eens opgemerk:</p>
+
+            <p><em>"Fochville is 'n groot dorp – dit moet nog net gebou word."</em></p>
+
+            <p>Hierdie woorde sou later as merkwaardig profeties beskou word.</p>
+
+            <figure class="history-image" onclick="openLightbox(this)">
+                <img src="images/perdestal.webp" alt="Voortrekker Perdestal">
+                <figcaption>Die ou perdestal wat as klubkamers deur die Voortrekkers gebruik is</figcaption>
+            </figure>
+
+            <p><strong>'n Ligter Oomblik uit die Verlede</strong></p>
+
+            <p>Tussen die ernstiger dae was daar ook humoristiese voorvalle. Een so 'n verhaal handel oor "die buurman se vark".</p>
+
+            <p>Sersant Visser en sy buurman, Piet de Vries, het albei gesukkel met 'n vark wat hul groentetuine verniel het. Elke keer het hulle die dier oor die heining teruggejaag – elkeen oortuig dit behoort aan die ander.</p>
+
+            <p>Uiteindelik besluit Visser om die saak uit te klaar, net om te hoor dat Piet dieselfde versoek aan hom rig. Dit word toe duidelik: die skuldige was 'n rondlopervark wat homself op albei se groente verlustig het.</p>
+
+            <p>Wat van die vark geword het, bly onbekend – maar die goeie buurmanskap het beslis oorleef.</p>
+
+            <p>Oor die vraag of die polisie destyds lui was, sal 'n mens liewer nie spekuleer nie. Wat egter wel as feit oorvertel word, is dat konstabels maandeliks die distrik moes deurkruis en elke plaas moes besoek. As bewys van hul besoek moes hulle die plaaseienaar se register onderteken — 'n eenvoudige, maar effektiewe manier om hul teenwoordigheid te bevestig.</p>
+
+            <p><strong>Die Eerste Dorpenaars</strong></p>
+
+            <p>Wat dorpsontwikkeling betref, word oom Koos en tant Malie Schoeman as die eerste dorpenaars beskou. Alhoewel hul huis in Skoolstraat geleë was, het oom Koos boorde, tuine en landerye aangelê tussen 5de-, 7de- en Lusernstraat.</p>
+
+            <p>Hy het onder meer tabak verbou en water met 'n donkiekar uit die Loopspruit aangery — 'n toneel wat vandag amper soos 'n skildery uit 'n ander era voel. Sy granate het hy aan die plaaslike Joodse handelaars verkoop, aangesien dit glo goed vir die hart was.</p>
+
+            <p>Oom Koos was ook die dorp se smid ("blacksmith"), en waens wat herstel moes word, is op die plein oorkant die hedendaagse droogskoonmakers geparkeer. Later moes hy egter die waens daar verwyder, aangesien hulle tydens politieke byeenkomste beskadig is — moontlik meer as net vurige toesprake wat daar plaasgevind het.</p>
+
+            <p>Hul seun, Japie Schoeman (gebore 5 Maart 1921), was die eerste kind wat in Fochville gebore is.</p>
+
+            <p>Nadat oom Koos leiwaterstelsels aangelê en boorgate gesink het, kon hy op groot skaal groente aan die dorp voorsien. Bekend vir sy vriendelikheid en opgewekte geaardheid, het hy daagliks met sy trollie en twee perde aflewerings by die hotel en huise gedoen.</p>
+
+            <p><strong>Sport en Kattekwaad</strong></p>
+
+            <p>Fochville het selfs sy eie unieke sport gehad: gewigstoot met 'n klip, oftewel "gewigsvoet". Op die plein waar die poskantoor vandag staan, het jong seuns mekaar uitgedaag om hul krag te wys. Die klippe was beslis nie klein nie, maar buiten 'n paar blou toonnaels hier en daar, was die sport verrassend veilig.</p>
+
+            <p>Kattekwaad het natuurlik ook nie ontbreek nie. Dit het ingesluit speletjies soos toktokkie, vrugte steel, en selfs die steel van mnr. Liebsen se hoenders — net om dit weer aan hom by sy winkel te verkoop!</p>
+
+            <p>Hierdie onderneming het egter tot 'n einde gekom toe hulle een dag sy haan aan hom probeer verkoop het, en hy prontuit verklaar het dat hy "nie so 'n gemors-ding op sy werf wil hê nie". 'n Plan wat uiteindelik sy eie stert gevang het.</p>
+
+            <p><strong>Humor en Misverstande</strong></p>
+
+            <p>Klein misverstande het ook hul deel van humor gebring. Oom Van Deventer, die haarkapper en 'n wewenaar, het eendag besluit om tant Annie, 'n weduwee, te beïndruk met 'n tuisgebakte koek.</p>
+
+            <p>Hy stuur dit saam met 'n knipoogboodskap — maar die boodskapper kon nie die bedoeling snap nie. Die koek beland toe by 'n ander ou wewenaar, wat sonder huiwering die helfte opeet en die res aan sy buurman stuur.</p>
+
+            <p>Tant Annie? Sy het nooit eers 'n krummel gesien nie.</p>
+
+            <p><strong>Vervoer en Vooruitgang</strong></p>
+
+            <p>Vervoer in Fochville vertel sy eie verhaal van ontwikkeling: van donkiekarre wat water uit die spruit aangery het, tot donkies wat soms verkeerdom ingespan was en elk hul eie rigting probeer kies het.</p>
+
+            <div class="history-images-row">
+                <figure class="history-image" onclick="openLightbox(this)">
+                    <img src="images/waterpomp.webp" alt="Waterpomp">
+                    <figcaption>'n Handpomp wat op erf 663 - die huidige taxi staanplek, gestaan het. Huidig staan die pomp by Laerskool Fochville</figcaption>
+                </figure>
+                <figure class="history-image" onclick="openLightbox(this)">
+                    <img src="images/groot trek.webp" alt="Groot Trek">
+                    <figcaption>Koos en Anna Schoeman en dogter Poppie (mev. Naudé) tydens die 1938-Groot Trek Eeufees. Ouers van die eerste kind wat in Fochville gebore is en eertydse "Blacksmith".</figcaption>
+                </figure>
+            </div>
+
+            <p>Met verloop van tyd het grondpaaie plek gemaak vir teerpaaie, en Model T-Fords vir luukse sedans.</p>
+
+            <p>Danksy die inisiatief van wyke mnr. C. Brits, destydse L.V. vir Losberg, het daar reeds in 1928 'n spoorverbinding tussen Potchefstroom en Fochville tot stand gekom. Die lyn is later verleng na Vereeniging, opgegradeer en geëlektrifiseer.</p>
+
+            <p>Op Maandag, 25 Oktober 1965, was Fochville in rep en roer met die opening van die nuwe stasiegebou. Die dorp het gegons soos 'n byenes. Met minister B. J. Schoeman aan die stuur het die seremoniële trein die stasie binnegestoom, verwelkom deur tamboermeisies van Laerskool Fochville.</p>
+
+            <p>Die seremoniemeester was mnr. S. G. J. van Niekerk, terwyl minister N. Diederichs die verrigtinge bygewoon het en minister Schoeman die amptelike toespraak gelewer het.</p>
+
+            <p><strong>'n Tradisie wat Bly Leef</strong></p>
+
+            <p>Fochville se invloed het selfs verder gestrek as sy eie grense. By die Onderwyskollege in Potchefstroom (POTE) het 'n unieke tradisie ontstaan: wanneer daar nagereg bedien word, verklaar senior studente speels:</p>
+
+            <p><em>"Die eerstejaars is vandag op Fochville."</em></p>
+
+            <p>Dit beteken eenvoudig dat geen eerstejaar daardie dag nagereg kry nie!</p>
+
+            <p>Volgens ou studente bestaan hierdie tradisie al dekades lank — 'n klein stukkie Fochville wat sy spore in studentelewe nagelaat het.</p>
+
+            <p><strong>Fochville: Die Naam… of Dalk Nie?</strong></p>
+
+            <p>Fochville se naam dra 'n internasionale erfenis — een wat teruglei na die Europese slagvelde van die Eerste Wêreldoorlog.</p>
+
+            <figure class="history-image" onclick="openLightbox(this)">
+                <img src="images/ferdinand-foch.png" alt="Maarskalk Ferdinand Foch">
+                <figcaption>Maarskalk Ferdinand Foch</figcaption>
+            </figure>
+
+            <p>Ferdinand Foch was 'n Franse maarskalk en die bevelvoerende offisier van die Geallieerde magte teen die einde van die oorlog. Hy is gebore op 2 Oktober 1851 en oorlede op 20 Maart 1929. Sy oorskot rus onder die koepel van Les Invalides in Parys, waar ook Napoleon Bonaparte sy laaste rusplek het.</p>
+
+            <p>'n Indrukwekkende standbeeld van Maarskalk Foch — die man na wie Fochville vernoem is — staan vandag nog op 'n plein in Londen, Engeland, as 'n stille wag oor sy nalatenskap.</p>
+
+            <figure class="history-image history-image-left" onclick="openLightbox(this)">
+                <img src="images/Marshal_Foch_statue.webp" alt="Standbeeld van Maarskalk Foch">
+                <figcaption>Hierdie beeld staan op 'n plein in Londen, Engeland.</figcaption>
+            </figure>
+
+            <p><strong>'n Militêre Loopbaan vol Kontraste</strong></p>
+
+            <p>Foch se militêre loopbaan het in 1870 begin toe hy as offisier aangestel is. Teen die ouderdom van 26 was hy reeds 'n kaptein in die kavallerie. Gedurende sy diens het hy in uiteenlopende omgewings geveg, insluitend die woestyne en bosse van Noord-Afrika.</p>
+
+            <p>Later het hy as bevelvoerder van verskeie militêre afdelings gedien en ook as militêre instrukteur opgetree. Sy loopbaan is gekenmerk deur interessante teenstrydighede — van streng militêre dissipline tot 'n persoonlike belangstelling in die mistieke.</p>
+
+            <p>Hy het ook sy ervarings neergeskryf, en twee van sy oorlogsherinneringe is later in sowel Frans as Engels gepubliseer.</p>
+
+            <p><strong>'n Naam Onder Debat</strong></p>
+
+            <p>Ten spyte van die internasionale prestige wat die naam "Fochville" gedra het, was nie almal in die dorp daarmee tevrede nie.</p>
+
+            <figure class="history-image" onclick="openLightbox(this)">
+                <img src="images/standbeeld.jpg" alt="Standbeeld Maarskalk Foch">
+                <figcaption>Maarskalk Ferdinand Foch, die man na wie Fochville vernoem is</figcaption>
+            </figure>
+
+            <p>In 1938 is daar 'n ernstige poging aangewend om die dorp se naam te verander. Tydens 'n vergadering van die Eeufeeskomitee op 1 November 1938 is besluit dat 'n nuwe naam oorweeg moet word.</p>
+
+            <p>Verskeie voorstelle is op die tafel geplaas:</p>
+
+            <p><em>Louis Botha<br>
+            Eeufeesdorp<br>
+            Paul Kruger<br>
+            Losberg<br>
+            Voortrekker<br>
+            Bloemensteyn<br>
+            Losbergdorp</em></p>
+
+            <p>Na bespreking is daar uiteindelik op die naam "Losberg" besluit.</p>
+
+            <p>Mnre. P. A. Vermaas, G. P. Brits (L.V.) en ds. G. Nel is toe afgevaardig na Pretoria om die saak verder te bevorder — amper soos 'n klein diplomatieke sending uit die hart van die Wes-Transvaal.</p>
+
+            <p><strong>Die Besluit van Bo</strong></p>
+
+            <p>Die voorgestelde naamsverandering het egter nooit gerealiseer nie.</p>
+
+            <p>Op 11 November 1939 is die aansoek deur die provinsiale owerheid afgekeur, op grond van die Registrasie van Aktes-wet van 1937.</p>
+
+            <p>En so het die naam Fochville gebly — amper asof die geskiedenis self besluit het om nie die bladsy om te slaan nie.</p>
+
+            <p><strong>Gedenkwaardighede: Spore van die Verlede</strong></p>
+
+            <p>Fochville is geleë in 'n streek met 'n besonder ryk geskiedenis — iets wat duidelik sigbaar is in die talle murasies, plekname, gedenktekens en monumente wat die landskap deurtrek.</p>
+
+            <p><strong>Vroeë Spore en Konflik</strong></p>
+
+            <p>In die rante tussen Losberg en Gatsrand is die oorblyfsels van Matabelekrale steeds sigbaar. Hierdie strukture dateer waarskynlik uit die tyd toe Mzilikazi (Silkaats) en sy mense noordwaarts gevlug het voor die magte van Shaka en Dingane.</p>
+
+            <p>Dit was ook in hierdie gebied waar die Voortrekkers met die Matabele slaags geraak het. Ná die Slag van Vegkop het die Matabele, saam met gesteelde vee, na Mosega uitgewyk. In die daaropvolgende skermutseling is hulle verslaan en die vee is teruggebring.</p>
+
+            <figure class="history-image" onclick="openLightbox(this)">
+                <img src="images/buffeldoorns.webp" alt="Die graf te Buffeldoorns">
+                <figcaption>Die graf te Buffeldoorns</figcaption>
+            </figure>
+
+            <p>Die plaas Deelkraal, ongeveer 14 km wes van Fochville, het sy naam gekry van die verdeling van hierdie vee. Onopgeëiste diere is gemerk deur een oor stomp te sny en na 'n aangrensende plaas geneem — wat later die naam Stompoorfontein gekry het.</p>
+
+            <p>Op mnr. Thys Basson se plaas, Elandsfontein, is daar ook 'n klipfort wat uit hierdie vroeë konfliktydperk dateer.</p>
+
+            <figure class="history-image history-image-left" onclick="openLightbox(this)">
+                <img src="images/Voortrekkerfort.webp" alt="Die Voortrekkerfort te Blandsfontein">
+                <figcaption>Die Voortrekkerfort te Blandsfontein: Op die agtergrond is die klipmuur duidelik sigbaar. Die bewoording van die gedenkplaat lees as volg: VOORTREKKERFORT - ELANDSFONTEIN "Hierdie fort is gebou deur die Voortrekkers onder Kommandant-Generaal A. M. Potgieter in 1842, en moes dien ter beskerming van hulle gesinne met die oog op moontlike vertrek van 'n Kommando teen die Britse Troepe van Natal". - opgerig deur die Historiese Monumente-Kommissie.</figcaption>
+            </figure>
+
+            <p>In dieselfde omgewing is 'n graf, vermoedelik van 'n seun uit die Harmse-familie, wat tragies gesterf het nadat 'n wa oor hom gery het — 'n klein, stille herinnering aan die harde werklikheid van pionierslewe.</p>
+
+            <p><strong>Vroeë Nedersettings en Herinneringe</strong></p>
+
+            <p>Reeds in 1836 vestig die Harmse-gesin hulle op die plaas Buffeldoorns. Die naam is afgelei van die tragiese dood van die vader, wat deur 'n buffel vertrap is.</p>
+
+            <figure class="history-image" onclick="openLightbox(this)">
+                <img src="images/Harmse-huis.webp" alt="Murasie van die Harmse huis">
+                <figcaption>Murasie van die huis wat in 1836 deur ene Harmse gebou is.</figcaption>
+            </figure>
+
+            <p>Naby staan ook 'n historiese huis van die Schutte-familie, gebou in 1869 en vandag nog bewoon — 'n lewende skakel met die verlede.</p>
+
+            <figure class="history-image history-image-left" onclick="openLightbox(this)">
+                <img src="images/Schutte.webp" alt="Woonhuis van die Schuttes">
+                <figcaption>Woonhuis van die bekende Schuites te Buffeldoorns soos tans gerestoureer. Die "Stoepkamer" is met tye as 'n "poskantoor" gebruik</figcaption>
+            </figure>
+
+            <p><strong>Die Ossewatrek van 1938</strong></p>
+
+            <p>'n Besondere oomblik in die dorp se geskiedenis was die simboliese Ossewatrek van 1938, onder leiding van Henning Klopper, destydse Speaker van die Volksraad.</p>
+
+            <p>Die trek het die fort, grafte en historiese wonings besoek voordat dit omstreeks 3 Desember 1938 deur Fochville beweeg het.</p>
+
+            <figure class="history-image" onclick="openLightbox(this)">
+                <img src="images/Prinsloo-wa.webp" alt="1938 Groot Trek herdenking">
+                <figcaption>1938 Groot Trek herdenking "Magrietha Prinsloo-Wa" Op die Wa: vlnr: Magrietha Muller, Magrietha Wessels (Rietjie), Magrietha Geldenhuis Voorste man: Michael Muller (Magrietha se man) Agterste man: J. P. Kok (Skoonseun van Michael Muller)</figcaption>
+            </figure>
+
+            <p>As gedenkteken van hierdie besoek is die Eeufeesmonument voor die Landdroskantore opgerig. Die monument is gebou op die sementblad waarin die wiel- en osse-spore van die Magrietha Prinsloo-wa vasgelê is.</p>
+
+            <figure class="history-image history-image-left" onclick="openLightbox(this)">
+                <img src="images/1938Monument.webp" alt="Die Monument voor die landdroskantoor">
+                <figcaption>Voor die landdroskantoor staan die Monument wat die 1938 Trek herdenk</figcaption>
+            </figure>
+
+            <p>Die basis bestaan uit klippe wat deur feesgangers op die dag self gepak is — elke klip met die naam van sy bydraer daarin gegraveer. Dit maak die monument nie net 'n simbool nie, maar 'n kollektiewe handtekening van 'n gemeenskap.</p>
+
+            <p><strong>Die Anglo-Boereoorlog se Erfenis</strong></p>
+
+            <p>Tekens van die Anglo-Boereoorlog is ook volop in die omgewing. Die bekendste hiervan is die Danie Theron-monument.</p>
+
+            <figure class="history-image" onclick="openLightbox(this)">
+                <img src="images/Danie_Theron_Monument.jpg" alt="Die Danie Theron Monument">
+                <figcaption>Die Danie Theron Monument</figcaption>
+            </figure>
+
+            <p>Hierdie monument is in 1950 deur die Voortrekkerbeweging opgerig op die plek waar Danie Theron gesneuwel het. Dit is onthul op 4 September 1950 — presies 50 jaar en 4 dae ná sy dood.</p>
+
+            <p>Die 26 meter hoë struktuur bestaan uit 'n suil van 50 ringe, wat die tydperk tussen sy dood en die oprigting simboliseer. Die metaalgedeelte verteenwoordig die vlam van vryheid — 'n simbool van die Boere se strewe na onafhanklikheid.</p>
+
+            <p>Volgens oorlewering was mev. Mara Malherbe die laaste persoon wat vir Theron 'n koppie koffie gegee het voordat hy en Burger Nel na hul noodlot vertrek het.</p>
+
+            <p><strong>Slagvelde en Fortifikasies</strong></p>
+
+            <figure class="history-image history-image-left" onclick="openLightbox(this)">
+                <img src="images/Modderfontein.webp" alt="Modderfontein">
+                <figcaption>Die vlaktes van Modderfontein waar die slagplaasgevind het</figcaption>
+            </figure>
+
+            <p>Ongeveer 2 km vanaf die Sandfontein–Vereeniging-pad het die Slag van Modderfonteinnek plaasgevind. Onder leiding van generaal Smuts het die Boeremagte die versterkte skanse op 31 Januarie 1901 met minimale lewensverlies verower. Twee dae later het die Britse mag 'n teenaanval deur voetsoldate probeer uitvoer, maar moes die rant ontruim ná 'n hewige bombardement.</p>
+
+            <p>Op mnr. Barend Vermaas se plaas, Renosterfontein, lê 'n klipfort op die hoogste punt van Klein Losberg.</p>
+
+            <figure class="history-image" onclick="openLightbox(this)">
+                <img src="images/klipfort.webp" alt="Die Klipfort te Klein Losberg">
+                <figcaption>Die Klipfort te Klein Losberg (plaas Rhenosterfontein) soos dit in die 1980's deur mnr. Barend Vermaas herstel is. Strategies is dit besonder goedgelee en kon die Boere in alle rigtings letterlik myle ver sien. Ongeveer 200 tree wes hiervandaan is enkele loopgrawe wat met klip uitgepak is en steeds in hul oorspronklike vorm is.</figcaption>
+            </figure>
+
+            <p>Die fort is tot sy oorspronklike toestand gerestoureer, en tydens die werk is verskeie Lee-Metford-patrone en doppies, asook 'n "Eno"-bottelproppie, gevind. Opvallend van die uitleg is die loopgrawe wat met klippe gepak is om 'n goeie uitsig oor die noordelike helling van die kop te verseker.</p>
+
+            <p><strong>'n Kerk met 'n Verhaal</strong></p>
+
+            <figure class="history-image history-image-left" onclick="openLightbox(this)">
+                <img src="images/Jachtfontein.webp" alt="Die kerkie te Jachtfontein">
+                <figcaption>Die besondere kerkie te Jachtfontein, Oos van Fochville. Opgerig in 1891 deur Veldk. J. T. Martins. Afgebrand deur die Engelse in die Anglo-Boere-Oorlog. Dis later herbou en in gebruik geneem op 6 April 1905. Dit was ook gebruik as C.N.O.-skool. Op 29 Junie 1980 is dit gerestoureer o.l.v. oudl. B. P. Geldenhuys.</figcaption>
+            </figure>
+
+            <p>Nog 'n historiese plek in die omgewing is Jachtfontein, waar 'n kerkie vóór die Anglo-Boereoorlog deur J. T. ("Tommie") Martins gebou is. Die kerkie is uit dankbaarheid opgerig nadat die Here hom van sy worsteling verlos het.</p>
+
+            <figure class="history-image" onclick="openLightbox(this)">
+                <img src="images/Martins.webp" alt="Vldk. J.T. Martins">
+                <figcaption>Vldk. J.T. Martins</figcaption>
+            </figure>
+
+            <p>Hoewel dit later afgebrand is, is dit herbou en op 6 April 1905 heropen. Vandag word dit deur die susterskerkie bedien en dienste word elke tweede Sondag daar gehou.</p>
+
+            <figure class="history-image history-image-left" onclick="openLightbox(this)">
+                <img src="images/grafte.webp" alt="Grafte te Jachtfontein">
+                <figcaption>Hierdie foto toon duidelik twee buitengewone grafte. Die massagrafte van 'n aantal kindertjies wat met die groot griep van 1918 oorlede is. Hierdie begraafplaas is geleë digby die kerkie en die 1938 Trek se ossewasapore te Jachtfontein.</figcaption>
+            </figure>
+
+            <p><strong>Die Ossewatrek se Nalatenskap</strong></p>
+
+            <p>Die Magrietha Prinsloo-wa het ook Jachtfontein, sowat 20 km oos van Fochville, op 5 Desember 1938 besoek. Daar kan die oorspronklike spore steeds gesien word.</p>
+
+            <figure class="history-image" onclick="openLightbox(this)">
+                <img src="images/Ossewa-spore.webp" alt="Historiese Ossewatrek 1938">
+                <figcaption>Historiese Ossewatrek 1938. Die Magrietha Prinsloo-wa het ook hierlangs verbygegaan - Jachtfontein.</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <p id="lightbox-caption" class="lightbox-caption"></p>
+        </div>
+    </div>
+    </main>
+
+    <footer id="footer-widgets">
+        <div class="footer-inner">
+            <div class="footer-box">
+                <h4>Kontak Ons</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa fa-phone"></i>
+                        <span><a href="tel:+27187712041">018 771 2041</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-envelope"></i>
+                        <span><a href="mailto:info@matlaw.africa">info@matlaw.africa</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-map-marker-alt"></i>
+                        <span>Fochville, Suid-Afrika</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h4>Vinnige Skakels</h4>
+                <ul>
+                    <li><a href="index.html">Tuis</a></li>
+                    <li><a href="index.html#services">Dienste</a></li>
+                    <li><a href="index.html#about">Oor Ons</a></li>
+                    <li><a href="history.html">Geskiedenis</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                    <li><a href="privacy-policy.html">Privaatheidsbeleid</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h4>Kantoorure</h4>
+                <p>Maandag - Vrydag: 09:00 - 17:00</p>
+                <p>Saterdag: Volgens afspraak</p>
+                <p>Sondag: Geslote</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="footer-bottom">
+        <p>&copy; 2026 Matthee Prokureurs Ing. Alle regte voorbehou. | Web ontwerp deur <a href="https://compourri.co.za" target="_blank" rel="noopener">Compourri</a></p>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="../js/script.js" defer></script>
+    <script>
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const caption = element.querySelector('figcaption');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.textContent = caption ? caption.textContent : '';
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>

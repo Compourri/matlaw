@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professionele notarisdienste in Fochville. Matthee Prokureurs verskaf dokumentsertifisering, volmagte en regsnotarisering.">
+    <title>Notarisdienste - Matthee Prokureurs Ing - Fochville</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="alternate" hreflang="en" href="../notary.html">
+    <link rel="alternate" hreflang="x-default" href="./notary.html">
+    <style>
+        .service-page {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+
+        .service-hero-image {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+        }
+
+        .service-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .service-hero-content h1 {
+            font-size: 36px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .service-hero-content p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .service-section {
+            background: rgba(9, 36, 21, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(22, 100, 50, 0.5);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .service-section h2 {
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--primary-green);
+        }
+
+        .service-section p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-section ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .service-section ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .service-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .service-section a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .service-section a:hover {
+            color: var(--white);
+        }
+
+        .highlight-box {
+            background: rgba(197, 157, 85, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .highlight-box ul li::before {
+            background: var(--white);
+        }
+
+        .cta-box {
+            text-align: center;
+            padding: 50px 40px;
+            background: rgba(9, 36, 21, 0.8);
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .cta-box h2 {
+            font-size: 28px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .cta-box p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            font-family: 'Marcellus SC', serif;
+            font-size: 15px;
+            letter-spacing: 1px;
+            padding: 15px 40px;
+            background-color: var(--gold);
+            color: var(--dark-green);
+            border: 1px solid var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--gold);
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 30px;
+            font-family: 'Marcellus SC', serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 10px 25px;
+            background-color: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .btn-back:hover {
+            background-color: var(--gold);
+            color: var(--dark-green);
+        }
+
+        @media (max-width: 992px) {
+            .service-hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .service-hero-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-page {
+                padding: 40px 20px;
+            }
+
+            .service-hero-content h1 {
+                font-size: 28px;
+            }
+
+            .service-section {
+                padding: 30px 25px;
+            }
+
+            .service-section h2 {
+                font-size: 20px;
+            }
+
+            .cta-box {
+                padding: 40px 25px;
+            }
+
+            .cta-box h2 {
+                font-size: 24px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn-primary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Slaan na hoofinhoud</a>
+    <div id="top-bar">
+        <div class="top-bar-content">
+            <span class="phone">
+                <i class="fa fa-phone"></i>
+                <a href="tel:+27187712041">018 771 2041</a>
+            </span>
+            <a href="../notary.html"><button type="button" class="lang-toggle">English</button></a>
+        </div>
+    </div>
+
+    <header id="site-header">
+        <div class="header-inner">
+            <div id="site-logo">
+                <a href="index.html"><img src="images/matprok.webp" alt="Matthee Prokureurs"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Tuis</a></li>
+                    <li class="has-submenu">
+                        <a href="index.html#services">Dienste</a>
+                        <ul class="submenu">
+                            <li><a href="conveyancing.html">Aktebesorging</a></li>
+                            <li><a href="notary.html">Notaris</a></li>
+                            <li><a href="personallaw.html">Persoonlike Reg</a></li>
+                            <li><a href="valuer.html">Geassosieerde Waardeerder</a></li>
+                            <li><a href="appraiser.html">Taksateur</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#about">Oor Ons</a></li>
+                    <li class="has-submenu">
+                        <a href="history.html">Geskiedenis</a>
+                        <ul class="submenu">
+                            <li><a href="history.html">Ons Geskiedenis</a></li>
+                            <li><a href="fochville.html">Fochville</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Notarisdienste</h1>
+            <p>Professionele notarisdienste in Fochville</p>
+        </div>
+    </section>
+
+    <section class="service-page">
+        <a href="index.html" class="btn-back">Terug na Tuis</a>
+
+        <div class="service-hero">
+            <div class="service-hero-content">
+                <h1>Notarisdienste Wat U Kan Vertrou</h1>
+                <p>Notarisdienste is noodsaaklik vir die sertifisering van dokumente, die verifikasie van kontrakte en die versekering van regs nakoming. By Matthee Prokureurs Inc lewer ons ervare notarisse betroubare, professionele dienste vir individue en besighede in Fochville en regdeur Gauteng.</p>
+                <p>Ons hanteer kontrakte, beëdigde verklaringe, volmagte, eiendomsdokumente en boedelverwante dokumentasie. Met aandag aan detail en volledige regs nakoming maak ons die proses eenvoudig.</p>
+            </div>
+            <div class="service-hero-image">
+                <img src="../images/notary.webp" alt="Notarisdienste">
+            </div>
+        </div>
+
+        <div class="service-section">
+            <h2>Ons Omvattende Notarisdienste</h2>
+        </div>
+
+        <div class="service-section">
+            <h2>Dokument Sertifisering en Verifikasie</h2>
+            <p>Ons sertifiseer en verifieer dokumente om te verseker dat hulle regs geldig is en deur owerhede erken word. Of dit vir besigheid, eiendom of persoonlike sake is, hanteer ons notarisse elke geval met presisie.</p>
+            <ul>
+                <li>Sertifisering van afskrifte</li>
+                <li>Verifikasie van handtekeninge</li>
+                <li>Dokument verifikasie</li>
+            </ul>
+            <p>Vir verwante dienste, sien ons <a href="personallaw.html">Persoonlike Reg</a> bladsy.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Volmagte</h2>
+            <p>'n Volmag verleen aan iemand regsgesag om namens u op te tree. Ons stel, notariseer en registreer volmagte wat regsbindend en ten volle nakomend is.</p>
+            <ul>
+                <li>Algemene volmagte</li>
+                <li>Spesiale volmagte vir eiendom of finansiële sake</li>
+                <li>Advies oor herroeping en wysigings</li>
+            </ul>
+            <p>Vir amptelike vereistes, besoek die <a href="https://www.justice.gov.za/dept/office/powerofattorney.html" target="_blank" rel="noopener">Departement van Justisie</a>.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Eiendoms- en Transportdokumente</h2>
+            <p>Notarisasie word dikwels vereis in eiendomstransaksies. Ons notarisdienste komplementeer ons transportkundige expertise.</p>
+            <ul>
+                <li>Aktes, kontrakte en eiendomsooreenkomste</li>
+                <li>Notarisasie van beëdigde verklaringe enverklarings</li>
+                <li>Skakeling met die Aktekantoor</li>
+            </ul>
+            <p>Leer meer oor ons <a href="conveyancing.html">transportdienste</a>.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Testamente, Trusts en Boedeldokumente</h2>
+            <p>Ons hanteer ook boedelverwante dokumentasie. Notarisasie van hierdie dokumente verseker regs erkenning en verminder potensiële dispute.</p>
+            <ul>
+                <li>Notarisasie van testamente en testamentêre dokumente</li>
+                <li>Trustooreenkomste en fiduciaire dokumente</li>
+                <li>Beëdigde verklaringe vir bestorwe boedels</li>
+            </ul>
+            <p>Vir amptelike riglyne, besoek die <a href="https://www.justice.gov.za/master/" target="_blank" rel="noopener">Meester van die Hooggeregshof</a>.</p>
+        </div>
+
+        <div class="service-section">
+            <h2>Waarom Matthee Prokureurs Kies?</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li>Ervarenotarisdiensverskaffers</li>
+                    <li>Vinnige, akkurate en professionele hantering</li>
+                    <li>Regs nakoming met Suid-Afrikaanse wetgewing</li>
+                    <li>Gepersonaliseerde diens vir alle kliënte</li>
+                </ul>
+            </div>
+            <p>Ons kombineer regs expertise met praktiese diens. Ons doel is om elke notarisasie eenvoudig, doeltreffend en betroubaar te maak.</p>
+        </div>
+
+        <div class="cta-box">
+            <h2>Kontak Ons Vandag</h2>
+            <p>Of u dokument sertifisering, volmagte, eiendomsdokumente of boedelnotarisasie benodig, is ons span gereed om te help.</p>
+            <div class="btn-group">
+                <a href="contact.html" class="btn-primary">Neem Vandag Kontak Op</a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer id="footer-widgets">
+        <div class="footer-inner">
+            <div class="footer-box">
+                <h4>Kontak Ons</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa fa-phone"></i>
+                        <span><a href="tel:+27187712041">018 771 2041</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-envelope"></i>
+                        <span><a href="mailto:info@matlaw.africa">info@matlaw.africa</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-map-marker-alt"></i>
+                        <span>Fochville, Suid-Afrika</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h4>Vinnige Skakels</h4>
+                <ul>
+                    <li><a href="index.html">Tuis</a></li>
+                    <li><a href="index.html#services">Dienste</a></li>
+                    <li><a href="index.html#about">Oor Ons</a></li>
+                    <li><a href="history.html">Geskiedenis</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                    <li><a href="privacy-policy.html">Privaatheidsbeleid</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h4>Kantoorure</h4>
+                <p>Maandag - Vrydag: 09:00 - 17:00</p>
+                <p>Saterdag: Volgens afspraak</p>
+                <p>Sondag: Geslote</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="footer-bottom">
+        <p>&copy; 2026 Matthee Prokureurs Ing. Alle regte voorbehou. | Web ontwerp deur <a href="https://compourri.co.za" target="_blank" rel="noopener">Compourri</a></p>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="../js/script.js" defer></script>
+</body>
+</html>
