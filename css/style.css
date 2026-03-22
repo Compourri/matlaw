@@ -101,7 +101,7 @@ a {
 
 @media (max-width: 992px) {
     .nav-toggle {
-        display: flex;
+        display: flex !important;
         align-items: center;
         justify-content: center;
     }
