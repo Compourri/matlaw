@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matlaw.africa/sitemap.xml
+Sitemap: https://matlaw.africa/afr/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 1

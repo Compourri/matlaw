@@ -95,6 +95,10 @@ a {
     padding: 0 20px;
 }
 
+.nav-toggle {
+    display: none !important;
+}
+
 @media (max-width: 992px) {
     .nav-toggle {
         display: flex;
