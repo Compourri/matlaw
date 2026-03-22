@@ -201,6 +201,31 @@ nav ul .submenu li a:hover {
     padding: 10px;
 }
 
+@media (max-width: 992px) {
+    nav ul .submenu {
+        position: static;
+        display: none;
+        background: rgba(0, 0, 0, 0.3);
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        padding-left: 20px;
+    }
+    
+    nav ul li.has-submenu.submenu-active .submenu {
+        display: block;
+    }
+    
+    nav ul li.has-submenu > a::after {
+        content: ' \f107';
+        transition: transform 0.3s ease;
+    }
+    
+    nav ul li.has-submenu.submenu-active > a::after {
+        transform: rotate(180deg);
+    }
+}
+
 .page-header {
     background: linear-gradient(rgba(9, 36, 21, 0.9), rgba(9, 36, 21, 0.9)), url('../images/attorney.webp');
     background-size: cover;
@@ -837,7 +862,6 @@ nav ul .submenu li a:hover {
 }
 
 .nav-toggle {
-    display: none;
     width: 40px;
     height: 40px;
     background: transparent;
@@ -846,6 +870,7 @@ nav ul .submenu li a:hover {
     cursor: pointer;
     position: relative;
     margin-right: 15px;
+    padding: 0;
 }
 
 .hamburger,
