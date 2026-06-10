@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initFormValidation();
     initScrollReveal();
+    initTeamLightbox();
 });
 
 function initMobileNav() {
@@ -217,11 +218,59 @@ window.addEventListener('load', function() {
     document.body.classList.add('loaded');
 });
 
-const lightbox = document.getElementById('lightbox');
+function openTeamLightbox(imgElement, name, role) {
+    var lightbox = document.getElementById('team-lightbox');
+    var lightboxImg = document.getElementById('team-lightbox-img');
+    var lightboxName = document.getElementById('team-lightbox-name');
+    var lightboxRole = document.getElementById('team-lightbox-role-text');
+    if (!lightbox) return;
+    lightboxImg.src = imgElement.src;
+    lightboxImg.alt = imgElement.alt;
+    lightboxName.textContent = name;
+    lightboxRole.textContent = role;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeTeamLightbox(event) {
+    if (event.target.id === 'team-lightbox' || event.target.classList.contains('team-lightbox-close')) {
+        var lightbox = document.getElementById('team-lightbox');
+        if (lightbox) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+}
+
+function initTeamLightbox() {
+    var teamPhotos = document.querySelectorAll('.team-photo');
+    teamPhotos.forEach(function(photo) {
+        photo.addEventListener('click', function() {
+            var img = this.querySelector('img');
+            var member = this.closest('.team-member');
+            if (!member) return;
+            var name = member.querySelector('h3').textContent;
+            var role = member.querySelector('.team-role').textContent;
+            openTeamLightbox(img, name, role);
+        });
+    });
+}
+
+var lightbox = document.getElementById('lightbox');
 if (lightbox) {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && lightbox.classList.contains('active')) {
             lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+var teamLightbox = document.getElementById('team-lightbox');
+if (teamLightbox) {
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && teamLightbox.classList.contains('active')) {
+            teamLightbox.classList.remove('active');
             document.body.style.overflow = '';
         }
     });
