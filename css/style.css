@@ -451,9 +451,14 @@ nav ul .submenu li a:hover {
     background: rgba(9, 36, 21, 0.5);
 }
 
+.team-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
