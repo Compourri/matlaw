@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://matlaw.africa/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/index.html"/>
+        <priority>1.0</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/conveyancing.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/conveyancing.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/conveyancing.html"/>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/notary.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/notary.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/notary.html"/>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/personal-law.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/personal-law.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/personal-law.html"/>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/history.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/history.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/history.html"/>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/associated-valuer.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/associated-valuer.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/associated-valuer.html"/>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/property-appraiser.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/property-appraiser.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/property-appraiser.html"/>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/contact.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/contact.html"/>
+        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/index.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/index.html"/>
+        <priority>0.9</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/fochville.html</loc>
+        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/history.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/history.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/history.html"/>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/conveyancing.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/conveyancing.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/conveyancing.html"/>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/notary.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/notary.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/notary.html"/>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/personal-law.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/personal-law.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/personal-law.html"/>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/associated-valuer.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/associated-valuer.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/associated-valuer.html"/>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/property-appraiser.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/property-appraiser.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/property-appraiser.html"/>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/contact.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/contact.html"/>
+        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/privacy-policy.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/privacy-policy.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/privacy-policy.html"/>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/popi-compliance.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/popi-compliance.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/popi-compliance.html"/>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/paia-manual.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/paia-manual.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/paia-manual.html"/>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/privacy-policy.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/privacy-policy.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/privacy-policy.html"/>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/popi-compliance.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/popi-compliance.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/popi-compliance.html"/>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/paia-manual.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/paia-manual.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/paia-manual.html"/>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+</urlset>

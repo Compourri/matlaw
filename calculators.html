@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Calculators | Matthee Attorneys Inc</title>
+    <link rel="icon" type="image/webp" href="/images/golden-scales-of-justice-png.webp">
+    <meta name="description" content="Use Matthee Attorneys' free calculators: Bond Cost, Bond Repayment, and Transfer Cost calculators for South African property transactions.">
+    <link rel="canonical" href="https://matlaw.africa/calculators.html">
+
+    <meta property="og:title" content="Calculators | Matthee Attorneys Inc">
+    <meta property="og:description" content="Free bond cost, bond repayment and transfer cost calculators.">
+    <meta property="og:image" content="https://matlaw.africa/images/mattheelogo.webp">
+    <meta property="og:url" content="https://matlaw.africa/calculators.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculators | Matthee Attorneys Inc">
+    <meta name="twitter:description" content="Free bond cost, bond repayment and transfer cost calculators.">
+    <meta name="twitter:image" content="https://matlaw.africa/images/mattheelogo.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <style>
+        .tab-bar {
+            display: flex;
+            gap: 0;
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 2px solid var(--border-color);
+        }
+        .tab-btn {
+            padding: 14px 28px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            color: var(--text-muted);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .tab-btn:hover {
+            color: var(--primary-color);
+        }
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        .tab-panel {
+            display: none;
+        }
+        .tab-panel.active {
+            display: block;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: start;
+        }
+        .calc-input-group {
+            margin-bottom: var(--spacing-md);
+        }
+        .calc-input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .calc-input-group .input-affix {
+            display: flex;
+            align-items: stretch;
+        }
+        .calc-input-group .input-affix span {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid var(--border-color);
+            border-right: none;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .calc-input-group input, .calc-input-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            color: var(--text-color);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            transition: border-color var(--transition);
+        }
+        .calc-input-group .input-affix input {
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            flex: 1;
+        }
+        .calc-input-group input:focus, .calc-input-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+                                .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+        }
+        .radio-group {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .radio-group label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+        .radio-group input[type="radio"] {
+            display: none;
+        }
+        .radio-group input[type="radio"]:checked + label {
+            background: var(--primary-color);
+            color: var(--text-color);
+            border-color: var(--primary-color);
+        }
+        .radio-group label:hover {
+            border-color: var(--primary-color);
+        }
+        .tooltip-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: 700;
+            cursor: help;
+            margin-left: 6px;
+            position: relative;
+            vertical-align: middle;
+            line-height: 1;
+        }
+        .tooltip-icon::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.9);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 400;
+            white-space: normal;
+            width: 240px;
+            text-align: left;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 100;
+            line-height: 1.4;
+        }
+        .tooltip-icon:hover::after {
+            opacity: 1;
+        }
+        .calc-btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--text-color);
+            padding: 14px 36px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+        .calc-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .results-table tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .results-table tr:last-child {
+            border-bottom: none;
+        }
+        .results-table td {
+            padding: 12px 8px;
+        }
+        .results-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+        }
+        .results-total td {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            border-top: 2px solid var(--primary-color);
+            padding-top: 14px;
+        }
+        .results-note {
+            margin-top: var(--spacing-sm);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .results-panel {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+        }
+        .calc-info {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .calc-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .calc-actions button {
+            padding: 10px 20px;
+            border: 1px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background 0.3s, color 0.3s;
+        }
+        .calc-actions button:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+        @media (max-width: 767px) {
+            .calculator-grid { grid-template-columns: 1fr; }
+            .input-row { grid-template-columns: 1fr; }
+            .tab-btn { padding: 10px 14px; font-size: 0.85rem; }
+        }
+        @media print {
+            @page { size: A4; margin: 20mm; }
+            * { color: #000 !important; background: #fff !important; border-color: #000 !important; }
+            .header, .footer, .tab-bar, .calc-btn, .calc-actions, .calc-info, .calculator-grid > div:first-child { display: none !important; }
+            .tab-panel { display: block !important; }
+            .section, .section-practice { padding: 0 !important; margin: 0 !important; }
+            .container { max-width: 100% !important; padding: 0 !important; }
+            .calculator-grid { display: block !important; }
+            .results-panel { display: block !important; box-shadow: none !important; border: none !important; padding: 0 !important; margin: 0 !important; }
+            .results-table { width: 100% !important; font-size: 11pt !important; }
+            .results-table td { padding: 4px 6px !important; }
+            .results-total td { font-weight: bold !important; }
+            .section-title { margin-bottom: 10px !important; }
+            .section-title h1 { font-size: 16pt !important; margin: 0 0 4px 0 !important; }
+            .section-title p { display: none !important; }
+            .results-note { font-size: 8pt !important; margin-top: 4px !important; }
+            .tooltip-icon { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Matthee Attorneys Inc Home">
+                <img src="images/mattheelogo.webp" alt="Matthee Attorneys Inc logo" width="150" height="60">
+            </a>
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="history.html" class="nav-link">History</a>
+                <div class="nav-dropdown">
+                    <span class="nav-link">Services</span>
+                    <div class="dropdown-menu">
+                        <a href="conveyancing.html" class="nav-link">Conveyancing</a>
+                        <a href="notary.html" class="nav-link">Notary</a>
+                        <a href="personal-law.html" class="nav-link">Personal Law</a>
+                        <a href="associated-valuer.html" class="nav-link">Valuer</a>
+                        <a href="property-appraiser.html" class="nav-link">Appraiser</a>
+                    </div>
+                </div>
+                <a href="https://costcalculator.korbitec.com/DC046BA0-7AA8-4D6B-9788-DD45BBBD13F8" class="nav-link" target="_blank" rel="noopener noreferrer">Cost Calculator</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="fica.html" class="nav-link">FICA</a>
+                <div class="lang-switch">
+                    <a class="active">EN</a>
+                    <a href="afr/calculators.html">AF</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section section-practice" aria-labelledby="page-heading">
+            <div class="container">
+                <div class="section-title">
+                    <h1 id="page-heading">COST CALCULATOR</h1>
+                    <p>Select a calculator below to estimate your property costs</p>
+                </div>
+
+                <div class="tab-bar">
+                    <button class="tab-btn active" data-tab="transfer-cost" onclick="switchTab('transfer-cost')" type="button">Transfer Cost</button>
+                    <button class="tab-btn" data-tab="bond-cost" onclick="switchTab('bond-cost')" type="button">Bond Cost</button>
+                    <button class="tab-btn" data-tab="bond-repayment" onclick="switchTab('bond-repayment')" type="button">Bond Repayment</button>
+                </div>
+
+                <div id="tab-transfer-cost" class="tab-panel active">
+                    <div class="calculator-grid">
+                        <div>
+                            <div class="calc-input-group">
+                                <label for="tc-purchasePrice">Property Purchase Price<span class="tooltip-icon" data-tooltip="The total purchase price of the property as agreed in the sale agreement.">?</span></label>
+                                <div class="input-affix">
+                                    <span>R</span>
+                                    <input type="text" id="tc-purchasePrice" inputmode="numeric" placeholder="e.g. 1 000 000">
+                                </div>
+                            </div>
+                            <button class="calc-btn" onclick="tcCalculate()" type="button">CALCULATE</button>
+                        </div>
+                        <div class="results-panel" id="tc-resultsPanel" style="display:none">
+                            <table class="results-table">
+                                <tbody id="tc-resultsBody"></tbody>
+                            </table>
+                            <p class="results-note">* All fees include VAT where applicable. Based on LSSA guideline fees, SARS transfer duty rates, and official Deeds Office tariffs.</p>
+                            <div class="calc-actions">
+                                <button type="button" onclick="window.print()">Print</button>
+                                <button type="button" onclick="tcSavePDF()">Save PDF</button>
+                                <button type="button" onclick="tcSendEmail()">Email</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-info">
+                        <p>Enter the value as required and click the <strong>'Calculate'</strong> button.</p>
+                        <p>The costs of transferring ownership of property into your name comprise costs due to the government in the form of transfer duty, legal costs as well as a number of payments the attorneys have to make to obtain clearances.</p>
+                        <p>Please note that all values returned by the Transfer cost calculator are quotation values subject to change.</p>
+                        <p>Although every effort has been made to ensure the accuracy of the content, Matthee Attorneys accepts no liability in respect of any errors contained herein. Under no circumstances will Matthee Attorneys be liable for any loss or damages whatsoever arising from the use of this calculator.</p>
+                    </div>
+                </div>
+
+                <div id="tab-bond-cost" class="tab-panel">
+                    <div class="calculator-grid">
+                        <div>
+                            <div class="calc-input-group">
+                                <label for="bc-bondAmount">Bond Amount<span class="tooltip-icon" data-tooltip="The total bond amount you wish to register over the property.">?</span></label>
+                                <div class="input-affix">
+                                    <span>R</span>
+                                    <input type="text" id="bc-bondAmount" inputmode="numeric" placeholder="e.g. 1 000 000">
+                                </div>
+                            </div>
+                            <button class="calc-btn" onclick="bcCalculate()" type="button">CALCULATE</button>
+                        </div>
+                        <div class="results-panel" id="bc-resultsPanel" style="display:none">
+                            <table class="results-table">
+                                <tbody id="bc-resultsBody"></tbody>
+                            </table>
+                            <p class="results-note">* All fees include VAT where applicable. Based on LSSA guideline fees and official Deeds Office tariffs.</p>
+                            <div class="calc-actions">
+                                <button type="button" onclick="window.print()">Print</button>
+                                <button type="button" onclick="bcSavePDF()">Save PDF</button>
+                                <button type="button" onclick="bcSendEmail()">Email</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-info">
+                        <p>Enter the value as required and click the <strong>'Calculate'</strong> button.</p>
+                        <p>There are legal and administration costs in registering a bank loan to cover the balance of your purchase price. These costs are required upfront before registration can take place.</p>
+                        <p>Please note that all values returned are quotation values subject to change.</p>
+                        <p>Although every effort has been made to ensure the accuracy of the content, Matthee Attorneys accepts no liability in respect of any errors contained herein. Under no circumstances will Matthee Attorneys be liable for any loss or damages whatsoever arising from the use of this calculator.</p>
+                    </div>
+                </div>
+
+                <div id="tab-bond-repayment" class="tab-panel">
+                    <div class="calculator-grid">
+                        <div>
+                            <div class="calc-input-group">
+                                <label for="br-bondAmount">Bond Amount<span class="tooltip-icon" data-tooltip="The total bond amount you wish to register over the property.">?</span></label>
+                                <div class="input-affix">
+                                    <span>R</span>
+                                    <input type="text" id="br-bondAmount" inputmode="numeric" placeholder="e.g. 1 000 000">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="calc-input-group">
+                                    <label>Years to Repay<span class="tooltip-icon" data-tooltip="Select the repayment term over which you intend to repay the bond.">?</span></label>
+                                    <div class="radio-group">
+                                        <input type="radio" name="br-years" id="br-yr5" value="5"><label for="br-yr5">5</label>
+                                        <input type="radio" name="br-years" id="br-yr10" value="10"><label for="br-yr10">10</label>
+                                        <input type="radio" name="br-years" id="br-yr20" value="20" checked><label for="br-yr20">20</label>
+                                        <input type="radio" name="br-years" id="br-yr25" value="25"><label for="br-yr25">25</label>
+                                        <input type="radio" name="br-years" id="br-yr30" value="30"><label for="br-yr30">30</label>
+                                    </div>
+                                </div>
+                                <div class="calc-input-group">
+                                    <label for="br-interestRate">Interest Rate (%)<span class="tooltip-icon" data-tooltip="The annual interest rate quoted by your bank.">?</span></label>
+                                    <input type="text" id="br-interestRate" inputmode="decimal" placeholder="e.g. 10.25" value="10.25">
+                                </div>
+                            </div>
+                            <button class="calc-btn" onclick="brCalculate()" type="button">CALCULATE</button>
+                        </div>
+                        <div class="results-panel" id="br-resultsPanel" style="display:none">
+                            <table class="results-table">
+                                <tbody id="br-resultsBody"></tbody>
+                            </table>
+                            <p class="results-note">* Monthly repayments calculated using the standard loan amortisation formula. Actual rates and terms may vary.</p>
+                            <div class="calc-actions">
+                                <button type="button" onclick="window.print()">Print</button>
+                                <button type="button" onclick="brSavePDF()">Save PDF</button>
+                                <button type="button" onclick="brSendEmail()">Email</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-info">
+                        <p>Enter the values as required and click the <strong>'Calculate'</strong> button.</p>
+                        <p>The bond repayment calculator will assist you in finding out what monthly expense you can expect on your bond.</p>
+                        <p>Please note that all values returned are quotation values subject to change.</p>
+                        <p>Although every effort has been made to ensure the accuracy of the content, Matthee Attorneys accepts no liability in respect of any errors contained herein. Under no circumstances will Matthee Attorneys be liable for any loss or damages whatsoever arising from the use of this calculator.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="conveyancing.html">Conveyancing</a>
+                    <a href="notary.html">Notary</a>
+                    <a href="personal-law.html">Personal Law</a>
+                    <a href="associated-valuer.html">Valuer</a>
+                    <a href="property-appraiser.html">Appraiser</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <a href="contact.html">Contact</a>
+                    <a href="history.html">History</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="paia-manual.html">PAIA Manual</a>
+                    <a href="fica.html">FICA Form</a>
+                    <a href="popi-compliance.html">POPI Compliance</a>
+                </div>
+                <div class="footer-col">
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/company/matthee-attorneys-inc" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/mattheeproc" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/mattheeproc" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://wa.me/27609682379" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <div class="footer-affiliations">
+                        <a href="https://www.lssa.org.za/" target="_blank" rel="noopener noreferrer"><img src="images/LSSA.webp" alt="Law Society of South Africa" loading="lazy" width="150" height="60"></a>
+                        <a href="https://www.sacpvp.co.za/registered-persons" target="_blank" rel="noopener noreferrer"><img src="images/sacpvp.webp" alt="South African Council for the Property Valuers Profession" loading="lazy" width="150" height="60"></a>
+                        <a href="https://saiv.org.za/member-directory/dawid-matthee/" target="_blank" rel="noopener noreferrer"><img src="images/SAIV.webp" alt="South African Institute of Valuers" loading="lazy" width="150" height="60"></a>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; <span id="year"></span> Matthee Attorneys Inc. All Rights Reserved. | Web design by <a href="https://compourri.co.za" target="_blank" rel="noopener">Compourri</a></p>
+        </div>
+    </footer>
+
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="Team member photo">
+        <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+        <div class="lightbox-content">
+            <img class="lightbox-image" src="" alt="">
+            <p class="lightbox-name"></p>
+            <p class="lightbox-role"></p>
+        </div>
+    </div>
+
+    <script src="js/jspdf.umd.min.js"></script>
+    <script src="js/main.js" type="module"></script>
+    <script>
+    function switchTab(tabId) {
+        document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.getElementById('tab-' + tabId).classList.add('active');
+        document.querySelector('[data-tab="' + tabId + '"]').classList.add('active');
+    }
+
+    function parsePrice(value) {
+        return parseFloat(value.replace(/[^0-9.]/g, '')) || 0;
+    }
+
+    function formatCurrency(amount) {
+        if (isNaN(amount)) return 'R 0,00';
+        return 'R ' + amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' ').replace(/\./g, ',');
+    }
+
+    function calcAttorneyFee(price) {
+        if (price <= 100000) return 6640;
+        if (price <= 500000) {
+            var base = 6640;
+            var extra = Math.ceil((price - 100000) / 50000) * 1060;
+            return base + extra;
+        }
+        if (price <= 1000000) {
+            var base = 15120;
+            var extra = Math.ceil((price - 500000) / 100000) * 2050;
+            return base + extra;
+        }
+        if (price <= 5000000) {
+            var base = 25370;
+            var extra = Math.ceil((price - 1000000) / 200000) * 2050;
+            return base + extra;
+        }
+        var base = 66370;
+        var extra = Math.ceil((price - 5000000) / 1000000) * 5160;
+        return base + extra;
+    }
+
+    function calcDeedsFee(price) {
+        if (price <= 100000) return 50;
+        if (price <= 200000) return 114;
+        if (price <= 300000) return 727;
+        if (price <= 600000) return 956;
+        if (price <= 800000) return 1346;
+        if (price <= 1000000) return 1546;
+        if (price <= 2000000) return 1738;
+        if (price <= 4000000) return 2408;
+        if (price <= 6000000) return 2922;
+        if (price <= 8000000) return 3480;
+        if (price <= 10000000) return 4068;
+        if (price <= 15000000) return 4844;
+        if (price <= 20000000) return 5818;
+        return 7751;
+    }
+
+    function calcTransferDuty(price) {
+        if (price <= 1210000) return 0;
+        if (price <= 1663800) return (price - 1210000) * 0.03;
+        if (price <= 2329300) return 13614 + (price - 1663800) * 0.06;
+        if (price <= 2994800) return 53544 + (price - 2329300) * 0.08;
+        if (price <= 13310000) return 106784 + (price - 2994800) * 0.11;
+        return 1241456 + (price - 13310000) * 0.13;
+    }
+
+    function calcMonthlyPayment(principal, annualRate, years) {
+        var r = annualRate / 100 / 12;
+        var n = years * 12;
+        if (r === 0) return principal / n;
+        var factor = Math.pow(1 + r, n);
+        return principal * r * factor / (factor - 1);
+    }
+
+    /* ===== Shared Print / PDF Helpers ===== */
+    function getCalculatorResultsData(tabId, alertText) {
+        var titleText = document.querySelector('.section-title h1').textContent.trim();
+        var panel = document.getElementById('tab-' + tabId);
+        var resultsPanel = panel.querySelector('.results-panel');
+        var resultsBody = resultsPanel.querySelector('tbody');
+        var rows = [];
+        resultsBody.querySelectorAll('tr').forEach(function(tr) {
+            var cells = tr.querySelectorAll('td');
+            if (cells.length === 2) {
+                rows.push({
+                    label: cells[0].textContent.trim().replace(/\s*\?\s*$/, ''),
+                    value: cells[1].textContent.trim(),
+                    total: tr.classList.contains('results-total')
+                });
+            }
+        });
+
+        if (!rows.length) {
+            alert(alertText);
+            return null;
+        }
+
+        var note = resultsPanel.querySelector('.results-note');
+        return {
+            title: titleText,
+            rows: rows,
+            note: note ? note.textContent.trim() : ''
+        };
+    }
+
+    function isValidEmailAddress(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function sendCalculatorEmail(tabId, alertText, subject, disclaimer) {
+        var data = getCalculatorResultsData(tabId, alertText);
+        if (!data) return;
+
+        var userEmail = prompt('Enter your email address to receive this estimate:');
+        if (userEmail === null) return;
+
+        userEmail = userEmail.trim();
+        if (!userEmail) return;
+
+        if (!isValidEmailAddress(userEmail)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        fetch('/api/send-calculator-email.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: userEmail,
+                subject: subject,
+                title: data.title,
+                rows: data.rows,
+                note: data.note,
+                disclaimer: disclaimer
+            })
+        })
+        .then(function(response) {
+            return response.json().then(function(payload) {
+                return { ok: response.ok, payload: payload };
+            });
+        })
+        .then(function(result) {
+            if (result.ok && result.payload.success) {
+                alert('Your estimate has been sent to ' + userEmail + '.');
+                return;
+            }
+            alert(result.payload.error || 'Could not send the email. Please try again later.');
+        })
+        .catch(function() {
+            alert('Could not send the email. Please try again later.');
+        });
+    }
+
+    function saveCalculatorPDF(tabId, alertText, filename) {
+        var data = getCalculatorResultsData(tabId, alertText);
+        if (!data) return;
+
+        var JsPDF = (window.jspdf && window.jspdf.jsPDF) || window.jsPDF;
+        if (!JsPDF) {
+            alert('PDF library failed to load. Please refresh the page and try again.');
+            return;
+        }
+
+        var doc = new JsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
+        var margin = 20;
+        var pageWidth = doc.internal.pageSize.getWidth();
+        var pageHeight = doc.internal.pageSize.getHeight();
+        var contentWidth = pageWidth - (margin * 2);
+        var y = margin;
+
+        doc.setTextColor(0, 0, 0);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(16);
+        doc.text(data.title, margin, y);
+        y += 12;
+
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(11);
+
+        data.rows.forEach(function(row) {
+            if (!row.label && !row.value) {
+                y += 4;
+                return;
+            }
+            if (y > pageHeight - margin) {
+                doc.addPage();
+                y = margin;
+            }
+            if (row.total) {
+                y += 3;
+                doc.setLineWidth(0.5);
+                doc.setDrawColor(0, 0, 0);
+                doc.line(margin, y, pageWidth - margin, y);
+                y += 7;
+                doc.setFont('helvetica', 'bold');
+            }
+
+            doc.text(row.label, margin, y);
+            doc.text(row.value, pageWidth - margin, y, { align: 'right' });
+
+            if (row.total) {
+                doc.setFont('helvetica', 'normal');
+            } else {
+                doc.setDrawColor(0, 0, 0);
+                doc.setLineWidth(0.1);
+                doc.line(margin, y + 2, pageWidth - margin, y + 2);
+            }
+            y += 6;
+        });
+
+        if (data.note) {
+            y += 4;
+            if (y > pageHeight - margin - 10) {
+                doc.addPage();
+                y = margin;
+            }
+            doc.setFontSize(8);
+            doc.text(doc.splitTextToSize(data.note, contentWidth), margin, y);
+        }
+
+        doc.save(filename);
+    }
+
+    /* ===== Bond Cost Calculator ===== */
+    function bcCalculate() {
+        var input = document.getElementById('bc-bondAmount');
+        var raw = input.value.trim();
+        if (!raw) { alert('Please enter a bond amount.'); return; }
+        var price = parsePrice(raw);
+        if (price <= 0) { alert('Please enter a valid bond amount.'); return; }
+        var attorneyExcl = calcAttorneyFee(price);
+        var attorneyIncl = attorneyExcl * 1.15;
+        var deedsFee = calcDeedsFee(price);
+        var postages = 920, elecGen = 402.50, elecInstruction = 575, deedsSearches = 138;
+        var subtotal = attorneyIncl + deedsFee + postages + elecGen + elecInstruction + deedsSearches;
+        var rows = [
+            { label: 'Bond Amount', value: formatCurrency(price), highlight: false },
+            { label: '', value: '', highlight: false },
+            { label: 'Bond Attorney Fees', value: formatCurrency(attorneyIncl), highlight: false, tooltip: 'Fee prescribed by the Law Society of South Africa and calculated based on the Bond amount.' },
+            { label: 'Postages & Petties', value: formatCurrency(postages), highlight: false, tooltip: 'Costs incurred such as telephone costs, postage and courier fees, administration fees, and bank charges.' },
+            { label: 'Deeds Office Fees', value: formatCurrency(deedsFee), highlight: false, tooltip: 'Fees published in the Government Gazette and calculated based on the bond amount.' },
+            { label: 'Electronic Generation Fee', value: formatCurrency(elecGen), highlight: false, tooltip: 'Fees incurred for the generation of electronic documents' },
+            { label: 'Electronic Instruction Fee', value: formatCurrency(elecInstruction), highlight: false, tooltip: 'Fees incurred when electronically instructing a Bank.' },
+            { label: 'Deeds Office Searches', value: formatCurrency(deedsSearches), highlight: false, tooltip: 'Deeds Office search fees to ensure there are no conditions that may prevent the property transaction.' },
+            { label: '', value: '', highlight: false },
+            { label: 'Total Bond Costs (incl VAT)', value: formatCurrency(subtotal), highlight: true }
+        ];
+        var tbody = document.getElementById('bc-resultsBody');
+        tbody.innerHTML = '';
+        rows.forEach(function(row) {
+            var tr = document.createElement('tr');
+            if (row.highlight) tr.className = 'results-total';
+            if (row.label === '' && row.value === '') tr.style.height = '8px';
+            var td1 = document.createElement('td');
+            if (row.tooltip) {
+                td1.innerHTML = row.label + ' <span class="tooltip-icon" data-tooltip="' + row.tooltip.replace(/"/g, '&quot;') + '">?</span>';
+            } else {
+                td1.textContent = row.label;
+            }
+            var td2 = document.createElement('td');
+            td2.textContent = row.value;
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tbody.appendChild(tr);
+        });
+        var panel = document.getElementById('bc-resultsPanel');
+        panel.style.display = 'block';
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function bcSavePDF() {
+        saveCalculatorPDF('bond-cost', 'Please calculate a bond cost estimate first.', 'bond-cost-estimate.pdf');
+    }
+
+    function bcSendEmail() {
+        sendCalculatorEmail(
+            'bond-cost',
+            'Please calculate a bond cost estimate first.',
+            'Bond Cost Estimate',
+            'Disclaimer: This is an estimate only. Actual costs may vary.'
+        );
+    }
+
+    document.getElementById('bc-bondAmount').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') bcCalculate();
+    });
+
+    /* ===== Bond Repayment Calculator ===== */
+    function brCalculate() {
+        var amountInput = document.getElementById('br-bondAmount');
+        var raw = amountInput.value.trim();
+        if (!raw) { alert('Please enter a bond amount.'); return; }
+        var principal = parsePrice(raw);
+        if (principal <= 0) { alert('Please enter a valid bond amount.'); return; }
+        var years = parseInt(document.querySelector('input[name="br-years"]:checked').value);
+        if (isNaN(years) || years < 1) { alert('Please enter a valid number of years.'); return; }
+        var rateStr = document.getElementById('br-interestRate').value.trim().replace(',', '.');
+        var annualRate = parseFloat(rateStr);
+        if (isNaN(annualRate) || annualRate <= 0) { alert('Please enter a valid interest rate.'); return; }
+        var monthly = calcMonthlyPayment(principal, annualRate, years);
+        var totalRepayment = monthly * years * 12;
+        var totalInterest = totalRepayment - principal;
+        var rows = [
+            { label: 'Bond Amount', value: formatCurrency(principal), highlight: false },
+            { label: 'Annual Interest Rate', value: annualRate.toFixed(2) + '%', highlight: false },
+            { label: 'Repayment Term', value: years + ' years', highlight: false },
+            { label: '', value: '', highlight: false },
+            { label: 'Total Monthly Cost', value: formatCurrency(monthly), highlight: true },
+            { label: 'Interest Repayment', value: formatCurrency(totalInterest), highlight: false, tooltip: 'The total amount of interest that will be repaid.' },
+            { label: 'Total Loan Repayment', value: formatCurrency(totalRepayment), highlight: false, tooltip: 'The total amount to be repaid including the capital amount and the interest amount.' }
+        ];
+        var tbody = document.getElementById('br-resultsBody');
+        tbody.innerHTML = '';
+        rows.forEach(function(row) {
+            var tr = document.createElement('tr');
+            if (row.highlight) tr.className = 'results-total';
+            if (row.label === '' && row.value === '') tr.style.height = '8px';
+            var td1 = document.createElement('td');
+            if (row.tooltip) {
+                td1.innerHTML = row.label + ' <span class="tooltip-icon" data-tooltip="' + row.tooltip.replace(/"/g, '&quot;') + '">?</span>';
+            } else {
+                td1.textContent = row.label;
+            }
+            var td2 = document.createElement('td');
+            td2.textContent = row.value;
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tbody.appendChild(tr);
+        });
+        var panel = document.getElementById('br-resultsPanel');
+        panel.style.display = 'block';
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function brSavePDF() {
+        saveCalculatorPDF('bond-repayment', 'Please calculate a bond repayment estimate first.', 'bond-repayment-estimate.pdf');
+    }
+
+    function brSendEmail() {
+        sendCalculatorEmail(
+            'bond-repayment',
+            'Please calculate a bond repayment estimate first.',
+            'Bond Repayment Estimate',
+            'Disclaimer: This is an estimate only. Actual costs may vary.'
+        );
+    }
+
+    document.getElementById('br-bondAmount').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') brCalculate();
+    });
+    document.getElementById('br-interestRate').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') brCalculate();
+    });
+
+    document.getElementById('bc-bondAmount').addEventListener('keydown', function(e) { if (e.key === 'Enter') bcCalculate(); });
+    document.getElementById('br-bondAmount').addEventListener('keydown', function(e) { if (e.key === 'Enter') brCalculate(); });
+    document.getElementById('br-interestRate').addEventListener('keydown', function(e) { if (e.key === 'Enter') brCalculate(); });
+    document.getElementById('tc-purchasePrice').addEventListener('keydown', function(e) { if (e.key === 'Enter') tcCalculate(); });
+
+    /* ===== Transfer Cost Calculator ===== */
+    function tcCalculate() {
+        var input = document.getElementById('tc-purchasePrice');
+        var raw = input.value.trim();
+        if (!raw) { alert('Please enter a property purchase price.'); return; }
+        var price = parsePrice(raw);
+        if (price <= 0) { alert('Please enter a valid purchase price.'); return; }
+        var attorneyExcl = calcAttorneyFee(price);
+        var attorneyIncl = attorneyExcl * 1.15;
+        var deedsFee = calcDeedsFee(price);
+        var transferDuty = calcTransferDuty(price);
+        var postages = 920, elecGen = 322, fica = 393.30, deedsSearches = 138, ratesClearance = 138;
+        var subtotal = attorneyIncl + deedsFee + transferDuty + postages + elecGen + fica + deedsSearches + ratesClearance;
+        var rows = [
+            { label: 'Property Purchase Price', value: formatCurrency(price), highlight: false },
+            { label: '', value: '', highlight: false },
+            { label: 'Transfer Attorney Fees', value: formatCurrency(attorneyIncl), highlight: false, tooltip: 'Fee prescribed by the Law Society of South Africa and calculated based on the purchase price of the property.' },
+            { label: 'Postages & Petties', value: formatCurrency(postages), highlight: false, tooltip: 'A fee calculated with reference to the Transfer Fee for administration charges and legislative compliance.' },
+            { label: 'Deeds Office Fees', value: formatCurrency(deedsFee), highlight: false, tooltip: 'Fees published in the Government Gazette and calculated based on the purchase price of the property.' },
+            { label: 'Electronic Generation Fee', value: formatCurrency(elecGen), highlight: false, tooltip: 'Fees incurred for the generation of electronic documents' },
+            { label: 'FICA', value: formatCurrency(fica), highlight: false, tooltip: 'Costs incurred when verifying the identity of a client prior to establishing a business relationship with them.' },
+            { label: 'Deeds Office Searches', value: formatCurrency(deedsSearches), highlight: false, tooltip: 'Deeds Office search fees to ensure there are no conditions that may prevent the property transaction.' },
+            { label: 'Rates Clearance Fees', value: formatCurrency(ratesClearance), highlight: false, tooltip: 'A Rates Clearance Certificate must be obtained to verify that there are no outstanding Rates and Taxes payable by the Seller of the Property' },
+            { label: 'Transfer Duty', value: formatCurrency(transferDuty), highlight: false, tooltip: 'Tax levied by the Government on property transactions' },
+            { label: '', value: '', highlight: false },
+            { label: 'Total Transfer Costs (incl VAT)', value: formatCurrency(subtotal), highlight: true }
+        ];
+        var tbody = document.getElementById('tc-resultsBody');
+        tbody.innerHTML = '';
+        rows.forEach(function(row) {
+            var tr = document.createElement('tr');
+            if (row.highlight) tr.className = 'results-total';
+            if (row.label === '' && row.value === '') tr.style.height = '8px';
+            var td1 = document.createElement('td');
+            if (row.tooltip) {
+                td1.innerHTML = row.label + ' <span class="tooltip-icon" data-tooltip="' + row.tooltip.replace(/"/g, '&quot;') + '">?</span>';
+            } else {
+                td1.textContent = row.label;
+            }
+            var td2 = document.createElement('td');
+            td2.textContent = row.value;
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tbody.appendChild(tr);
+        });
+        var panel = document.getElementById('tc-resultsPanel');
+        panel.style.display = 'block';
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function tcSavePDF() {
+        saveCalculatorPDF('transfer-cost', 'Please calculate a transfer cost estimate first.', 'transfer-cost-estimate.pdf');
+    }
+
+    function tcSendEmail() {
+        sendCalculatorEmail(
+            'transfer-cost',
+            'Please calculate a transfer cost estimate first.',
+            'Transfer Cost Estimate',
+            'Disclaimer: This is an estimate only. Actual costs may vary.'
+        );
+    }
+
+    document.getElementById('tc-purchasePrice').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') tcCalculate();
+    });
+    </script>
+</body>
+</html>

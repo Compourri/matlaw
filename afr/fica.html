@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FICA Vorm | Matthee Prokureurs Ing</title>
+    <link rel="icon" type="image/webp" href="/images/golden-scales-of-justice-png.webp">
+    <meta name="description" content="Voltooi die FICA- en Kontakinligtingsvorm vir Verbande by Matthee Prokureurs Ing. Laai u ID, bewys van adres en ander vereiste dokumente op.">
+    <link rel="canonical" href="https://matlaw.africa/afr/fica.html">
+    <link rel="alternate" hreflang="en" href="https://matlaw.africa/fica.html">
+    <link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/fica.html">
+
+    <meta property="og:title" content="FICA Vorm | Matthee Prokureurs Ing">
+    <meta property="og:description" content="Voltooi die FICA- en Kontakinligtingsvorm vir Verbande. Laai u ID, bewys van adres en ander vereiste dokumente op.">
+    <meta property="og:image" content="https://matlaw.africa/images/mattheelogo.webp">
+    <meta property="og:url" content="https://matlaw.africa/afr/fica.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FICA Vorm | Matthee Prokureurs Ing">
+    <meta name="twitter:description" content="Voltooi die FICA- en Kontakinligtingsvorm vir Verbande. Laai u ID, bewys van adres en ander vereiste dokumente op.">
+    <meta name="twitter:image" content="https://matlaw.africa/images/mattheelogo.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .fica-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        .fica-header h2 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+        .fica-header .fica-contact {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .fica-header .fica-contact a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .fica-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .fica-required {
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: var(--spacing-lg);
+            padding: 12px;
+            border: 1px solid var(--primary-color);
+            border-radius: var(--radius-sm);
+            background: rgba(255,255,255,0.03);
+        }
+        .fica-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+        }
+        .fica-applicant {
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+        }
+        .fica-applicant h3 {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .fica-section {
+            margin-bottom: var(--spacing-md);
+        }
+        .fica-section-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .fica-row {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 0;
+            margin-bottom: 2px;
+        }
+        .fica-row label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 6px 8px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            border-right: none;
+            display: flex;
+            align-items: center;
+            color: var(--text-muted);
+        }
+        .fica-row input, .fica-row select {
+            width: 100%;
+            padding: 6px 10px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            font-family: var(--font-primary);
+            font-size: 0.85rem;
+        }
+        .fica-row input:focus, .fica-row select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        .fica-full {
+            margin-bottom: 2px;
+        }
+        .fica-full label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: var(--text-muted);
+        }
+        .fica-full input, .fica-full textarea {
+            width: 100%;
+            padding: 8px 10px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            font-family: var(--font-primary);
+            font-size: 0.85rem;
+            border-radius: var(--radius-sm);
+        }
+        .fica-full textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+        .fica-full input:focus, .fica-full textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        .fica-upload-section {
+            margin-top: var(--spacing-lg);
+        }
+        .fica-upload-section h3 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+        .upload-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+        }
+        .upload-item {
+            border: 2px dashed var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: var(--spacing-md);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .upload-item:hover {
+            border-color: var(--primary-color);
+            background: rgba(255,255,255,0.03);
+        }
+        .upload-item input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .upload-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+            display: block;
+        }
+        .upload-item span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: block;
+        }
+        .upload-item .upload-status {
+            font-size: 0.75rem;
+            color: #4caf50;
+            margin-top: 4px;
+            display: none;
+        }
+        .upload-item.has-file .upload-status {
+            display: block;
+        }
+        .fica-submit {
+            text-align: center;
+            margin-top: var(--spacing-lg);
+        }
+        .fica-submit button {
+            padding: 14px 48px;
+            font-size: 1rem;
+        }
+        @media (max-width: 767px) {
+            .fica-grid { grid-template-columns: 1fr; }
+            .fica-row { grid-template-columns: 120px 1fr; }
+            .upload-grid { grid-template-columns: 1fr; }
+        }
+        @media print {
+            .header, .footer, .fica-submit, .upload-item input[type="file"] { display: none !important; }
+            .upload-item { border-style: solid; border-color: #000; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" class="logo" aria-label="Matthee Prokureurs Ing Tuis">
+                <img src="../images/mattheelogo.webp" alt="Matthee Prokureurs Ing logo" width="150" height="60">
+            </a>
+            <button class="menu-toggle" aria-label="Navigasie knoppie" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" aria-label="Hoof navigasie">
+                <a href="../index.html" class="nav-link">Tuis</a>
+                <a href="history.html" class="nav-link">Geskiedenis</a>
+                <div class="nav-dropdown">
+                    <span class="nav-link">Dienste</span>
+                    <div class="dropdown-menu">
+                        <a href="conveyancing.html" class="nav-link">Transport</a>
+                        <a href="notary.html" class="nav-link">Notaris</a>
+                        <a href="personal-law.html" class="nav-link">Persoonlik</a>
+                        <a href="associated-valuer.html" class="nav-link">Takseerder</a>
+                        <a href="property-appraiser.html" class="nav-link">Eiendomsappraiser</a>
+                    </div>
+                </div>
+                <a href="https://costcalculator.korbitec.com/DC046BA0-7AA8-4D6B-9788-DD45BBBD13F8" class="nav-link" target="_blank" rel="noopener noreferrer">Kosteberekenaar</a>
+                <a href="contact.html" class="nav-link">Kontak</a>
+                <div class="lang-switch">
+                    <a href="../fica.html">EN</a>
+                    <a class="active">AF</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section section-practice" aria-labelledby="fica-heading">
+            <div class="container">
+                <div class="section-title">
+                    <h1 id="fica-heading">FICA VORM</h1>
+                    <p>Voltooi die vorm hieronder en laai die vereiste dokumente op</p>
+                </div>
+
+                <div class="fica-header">
+                    <h2>FICA- EN KONTAKINLIGTINGVORM VIR VERBANDE</h2>
+                    <p class="fica-contact">TEL: <a href="tel:+27187712041">018 771 2041</a> &mdash; E-POS: <a href="mailto:vicki@matlaw.africa">vicki@matlaw.africa</a></p>
+                </div>
+
+                <p class="fica-note">Nota: Ons mag volgens die wet nie ons dokumente vir handtekening teken voordat FICA-nakoming hierin plaasvind nie</p>
+
+                <div class="fica-required">
+                    VERSOEK ASSEBLIEF kopiee van: U ID-kaart voor &amp; agter, bewys van woonadres, huweliksgetuigskrif &amp; Ante Nuptial Contract
+                </div>
+
+                <form id="ficaForm" novalidate aria-label="FICA vorm">
+                    <div class="fica-grid">
+                        <!-- 1ste Applikant -->
+                        <div class="fica-applicant">
+                            <h3>1STE APPLIKANT</h3>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">FICA</div>
+                                <div class="fica-row">
+                                    <label for="a1-names">Name</label>
+                                    <input type="text" id="a1-names" name="a1_names">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a1-id">Identiteitsnommer</label>
+                                    <input type="text" id="a1-id" name="a1_id">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a1-married">Huwelikstatus</label>
+                                    <select id="a1-married" name="a1_married">
+                                        <option value="">Kies</option>
+                                        <option value="in_community">In Gemeenskap van Goedere</option>
+                                        <option value="out_community">Buite Gemeenskap van Goedere</option>
+                                        <option value="anc">Ante Nuptial Contract</option>
+                                        <option value="single">Enkellopend</option>
+                                        <option value="widowed">Weduwee/Wewenaar</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">KONTAK</div>
+                                <div class="fica-row">
+                                    <label for="a1-cell">Selfoon</label>
+                                    <input type="tel" id="a1-cell" name="a1_cell">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a1-tel">Tuis telefoon</label>
+                                    <input type="tel" id="a1-tel" name="a1_tel">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a1-email">E-pos</label>
+                                    <input type="email" id="a1-email" name="a1_email">
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">SARS</div>
+                                <div class="fica-row">
+                                    <label for="a1-tax">Inkomstebelasting nommer</label>
+                                    <input type="text" id="a1-tax" name="a1_tax">
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">WOONADRES</div>
+                                <div class="fica-full">
+                                    <textarea id="a1-res-address" name="a1_res_address" rows="2"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">POSADRES</div>
+                                <div class="fica-full">
+                                    <textarea id="a1-post-address" name="a1_post_address" rows="2"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">TOEKOMSTIGE WOONADRES</div>
+                                <div class="fica-row">
+                                    <label for="a1-occ-date">Datum van besetting</label>
+                                    <input type="date" id="a1-occ-date" name="a1_occ_date">
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">TOEKOMSTIGE POSADRES</div>
+                                <div class="fica-full">
+                                    <textarea id="a1-future-post" name="a1_future_post" rows="2"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">BANKBESONDERHEDE VIR DEBIT ORDER</div>
+                                <div class="fica-row">
+                                    <label for="a1-bank">Bank</label>
+                                    <input type="text" id="a1-bank" name="a1_bank">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a1-accholder">Rekeningshouer</label>
+                                    <input type="text" id="a1-accholder" name="a1_accholder">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a1-accno">Rekening nommer</label>
+                                    <input type="text" id="a1-accno" name="a1_accno">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a1-branch">Tak Kode</label>
+                                    <input type="text" id="a1-branch" name="a1_branch">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a1-branchname">Tak Naam</label>
+                                    <input type="text" id="a1-branchname" name="a1_branchname">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a1-acctype">Rekening Tipe</label>
+                                    <select id="a1-acctype" name="a1_acctype">
+                                        <option value="">Kies</option>
+                                        <option value="savings">Spaarrekening</option>
+                                        <option value="cheque">Lopende Rekening</option>
+                                        <option value="transmission">Oordragrekening</option>
+                                    </select>
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a1-debitdate">Betaal-/Debit order datum</label>
+                                    <input type="text" id="a1-debitdate" name="a1_debitdate" placeholder="bv. 1ste of 25ste">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2de Applikant / Eggenoot -->
+                        <div class="fica-applicant">
+                            <h3>2DE APPLIKANT / EGGENOOT</h3>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">FICA</div>
+                                <div class="fica-row">
+                                    <label for="a2-names">Name</label>
+                                    <input type="text" id="a2-names" name="a2_names">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a2-id">Identiteitsnommer</label>
+                                    <input type="text" id="a2-id" name="a2_id">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a2-married">Huwelikstatus</label>
+                                    <select id="a2-married" name="a2_married">
+                                        <option value="">Kies</option>
+                                        <option value="in_community">In Gemeenskap van Goedere</option>
+                                        <option value="out_community">Buite Gemeenskap van Goedere</option>
+                                        <option value="anc">Ante Nuptial Contract</option>
+                                        <option value="single">Enkellopend</option>
+                                        <option value="widowed">Weduwee/Wewenaar</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">KONTAK</div>
+                                <div class="fica-row">
+                                    <label for="a2-cell">Selfoon</label>
+                                    <input type="tel" id="a2-cell" name="a2_cell">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a2-tel">Tuis telefoon</label>
+                                    <input type="tel" id="a2-tel" name="a2_tel">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a2-email">E-pos</label>
+                                    <input type="email" id="a2-email" name="a2_email">
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">SARS</div>
+                                <div class="fica-row">
+                                    <label for="a2-tax">Inkomstebelasting nommer</label>
+                                    <input type="text" id="a2-tax" name="a2_tax">
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">WOONADRES</div>
+                                <div class="fica-full">
+                                    <textarea id="a2-res-address" name="a2_res_address" rows="2"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">POSADRES</div>
+                                <div class="fica-full">
+                                    <textarea id="a2-post-address" name="a2_post_address" rows="2"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">TOEKOMSTIGE WOONADRES</div>
+                                <div class="fica-row">
+                                    <label for="a2-occ-date">Datum van besetting</label>
+                                    <input type="date" id="a2-occ-date" name="a2_occ_date">
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">TOEKOMSTIGE POSADRES</div>
+                                <div class="fica-full">
+                                    <textarea id="a2-future-post" name="a2_future_post" rows="2"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="fica-section">
+                                <div class="fica-section-title">BANKBESONDERHEDE VIR DEBIT ORDER</div>
+                                <div class="fica-row">
+                                    <label for="a2-bank">Bank</label>
+                                    <input type="text" id="a2-bank" name="a2_bank">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a2-accholder">Rekeningshouer</label>
+                                    <input type="text" id="a2-accholder" name="a2_accholder">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a2-accno">Rekening nommer</label>
+                                    <input type="text" id="a2-accno" name="a2_accno">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a2-branch">Tak Kode</label>
+                                    <input type="text" id="a2-branch" name="a2_branch">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a2-branchname">Tak Naam</label>
+                                    <input type="text" id="a2-branchname" name="a2_branchname">
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a2-acctype">Rekening Tipe</label>
+                                    <select id="a2-acctype" name="a2_acctype">
+                                        <option value="">Kies</option>
+                                        <option value="savings">Spaarrekening</option>
+                                        <option value="cheque">Lopende Rekening</option>
+                                        <option value="transmission">Oordragrekening</option>
+                                    </select>
+                                </div>
+                                <div class="fica-row">
+                                    <label for="a2-debitdate">Betaal-/Debit order datum</label>
+                                    <input type="text" id="a2-debitdate" name="a2_debitdate" placeholder="bv. 1ste of 25ste">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dokument Oplaaier -->
+                    <div class="fica-upload-section">
+                        <h3>LAAI VEREISTE DOKUMENTE OP</h3>
+                        <div class="upload-grid">
+                            <div class="upload-item" id="upload-id-front">
+                                <input type="file" accept=".pdf,.jpg,.jpeg,.png" id="file-id-front" name="file_id_front">
+                                <i class="fa-solid fa-id-card"></i>
+                                <span>ID Kaart (Voor)</span>
+                                <div class="upload-status"><i class="fa-solid fa-check"></i> Leer gekies</div>
+                            </div>
+                            <div class="upload-item" id="upload-id-back">
+                                <input type="file" accept=".pdf,.jpg,.jpeg,.png" id="file-id-back" name="file_id_back">
+                                <i class="fa-solid fa-id-card"></i>
+                                <span>ID Kaart (Agter)</span>
+                                <div class="upload-status"><i class="fa-solid fa-check"></i> Leer gekies</div>
+                            </div>
+                            <div class="upload-item" id="upload-proof-address">
+                                <input type="file" accept=".pdf,.jpg,.jpeg,.png" id="file-proof-address" name="file_proof_address">
+                                <i class="fa-solid fa-home"></i>
+                                <span>Bewys van Woonadres</span>
+                                <div class="upload-status"><i class="fa-solid fa-check"></i> Leer gekies</div>
+                            </div>
+                            <div class="upload-item" id="upload-marriage">
+                                <input type="file" accept=".pdf,.jpg,.jpeg,.png" id="file-marriage" name="file_marriage">
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Huweliksgetuigskrif</span>
+                                <div class="upload-status"><i class="fa-solid fa-check"></i> Leer gekies</div>
+                            </div>
+                            <div class="upload-item" id="upload-anc">
+                                <input type="file" accept=".pdf,.jpg,.jpeg,.png" id="file-anc" name="file_anc">
+                                <i class="fa-solid fa-file-contract"></i>
+                                <span>Ante Nuptial Contract</span>
+                                <div class="upload-status"><i class="fa-solid fa-check"></i> Leer gekies</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fica-submit">
+                        <button type="submit" class="btn">DIEN FICA VORM IN</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Dienste</h4>
+                    <a href="conveyancing.html">Transport</a>
+                    <a href="notary.html">Notaris</a>
+                    <a href="personal-law.html">Persoonlik</a>
+                    <a href="associated-valuer.html">Takseerder</a>
+                    <a href="property-appraiser.html">Eiendomsappraiser</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontak Ons</h4>
+                    <a href="contact.html">Kontak</a>
+                    <a href="history.html">Geskiedenis</a>
+                    <a href="privacy-policy.html">Privaatheidsbeleid</a>
+                    <a href="paia-manual.html">PAIA Handleiding</a>
+                    <a href="popi-compliance.html">POPI Nakoming</a>
+                </div>
+                <div class="footer-col">
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/company/matthee-attorneys-inc" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/mattheeproc" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/mattheeproc" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://wa.me/27609682379" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <div class="footer-affiliations">
+                        <a href="https://www.lssa.org.za/" target="_blank" rel="noopener noreferrer"><img src="../images/LSSA.webp" alt="Regsgenootskap van Suid-Afrika" loading="lazy" width="150" height="60"></a>
+                        <a href="https://www.sacpvp.co.za/registered-persons" target="_blank" rel="noopener noreferrer"><img src="../images/sacpvp.webp" alt="Suid-Afrikaanse Raad vir die Eiendomsberoepe" loading="lazy" width="150" height="60"></a>
+                        <a href="https://saiv.org.za/member-directory/dawid-matthee/" target="_blank" rel="noopener noreferrer"><img src="../images/SAIV.webp" alt="Suid-Afrikaanse Instituut van Takseerders" loading="lazy" width="150" height="60"></a>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; <span id="year"></span> Matthee Prokureurs Ing. Alle Regte Voorbehou. | Webontwerp deur <a href="https://compourri.co.za" target="_blank" rel="noopener">Compourri</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" type="module"></script>
+    <script>
+    document.querySelectorAll('.upload-item input[type="file"]').forEach(function(input) {
+        input.addEventListener('change', function() {
+            var item = this.closest('.upload-item');
+            if (this.files && this.files.length > 0) {
+                item.classList.add('has-file');
+            } else {
+                item.classList.remove('has-file');
+            }
+        });
+    });
+
+    document.getElementById('ficaForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = this;
+        var submitBtn = form.querySelector('button[type="submit"]');
+        var originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'STUUR...';
+
+        var formData = new FormData(form);
+
+        fetch('/api/send-fica.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(function(response) {
+            return response.json().then(function(payload) {
+                return { ok: response.ok, payload: payload };
+            });
+        })
+        .then(function(result) {
+            if (result.ok && result.payload.success) {
+                alert('Dankie. U FICA-vorm is gestuur na vicki@matlaw.africa. Ons sal u binnekort kontak.');
+                form.reset();
+                document.querySelectorAll('.upload-item').forEach(function(item) {
+                    item.classList.remove('has-file');
+                });
+            } else {
+                alert(result.payload.error || 'Kon die vorm nie stuur nie. Probeer asseblief weer later.');
+            }
+        })
+        .catch(function() {
+            alert('Kon die vorm nie stuur nie. Probeer asseblief weer later.');
+        })
+        .finally(function() {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+        });
+    });
+    </script>
+</body>
+</html>

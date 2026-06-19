@@ -1,0 +1,29 @@
+RewriteEngine On
+
+# Redirect old domain to new domain
+RewriteCond %{HTTP_HOST} ^(www\.)?mattheeattorneys\.co\.za [NC]
+RewriteRule ^(.*)$ https://matlaw.africa/$1 [R=301,L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://matlaw.africa/$1 [R=301,L]
+
+# Custom 404
+ErrorDocument 404 /404.html
+
+# Cache static assets
+<FilesMatch "\.(webp|jpg|jpeg|png|gif|ico|svg|woff2?|css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+
+<FilesMatch "\.(html)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+</FilesMatch>
+
+# Security headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "DENY"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Compress text files
+AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml

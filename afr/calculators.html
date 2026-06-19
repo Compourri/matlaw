@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Berekenaars | Matthee Prokureurs Ing</title>
+    <link rel="icon" type="image/webp" href="/images/golden-scales-of-justice-png.webp">
+    <meta name="description" content="Gebruik Matthee Prokureurs se gratis berekenaars: Verbandkoste, Verbandterugbetalings en Oordragkoste-berekenaars vir Suid-Afrikaanse eiendomstransaksies.">
+    <link rel="canonical" href="https://matlaw.africa/afr/calculators.html">
+
+    <meta property="og:title" content="Berekenaars | Matthee Prokureurs Ing">
+    <meta property="og:description" content="Gratis verbandkoste, verbandterugbetalings en oordragkoste-berekenaars.">
+    <meta property="og:image" content="https://matlaw.africa/images/mattheelogo.webp">
+    <meta property="og:url" content="https://matlaw.africa/afr/calculators.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Berekenaars | Matthee Prokureurs Ing">
+    <meta name="twitter:description" content="Gratis verbandkoste, verbandterugbetalings en oordragkoste-berekenaars.">
+    <meta name="twitter:image" content="https://matlaw.africa/images/mattheelogo.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <style>
+        .tab-bar {
+            display: flex;
+            gap: 0;
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 2px solid var(--border-color);
+        }
+        .tab-btn {
+            padding: 14px 28px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            color: var(--text-muted);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .tab-btn:hover {
+            color: var(--primary-color);
+        }
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        .tab-panel {
+            display: none;
+        }
+        .tab-panel.active {
+            display: block;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: start;
+        }
+        .calc-input-group {
+            margin-bottom: var(--spacing-md);
+        }
+        .calc-input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .calc-input-group .input-affix {
+            display: flex;
+            align-items: stretch;
+        }
+        .calc-input-group .input-affix span {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid var(--border-color);
+            border-right: none;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .calc-input-group input, .calc-input-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            color: var(--text-color);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            transition: border-color var(--transition);
+        }
+        .calc-input-group .input-affix input {
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            flex: 1;
+        }
+        .calc-input-group input:focus, .calc-input-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+        }
+        .radio-group {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .radio-group label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+        .radio-group input[type="radio"] {
+            display: none;
+        }
+        .radio-group input[type="radio"]:checked + label {
+            background: var(--primary-color);
+            color: var(--text-color);
+            border-color: var(--primary-color);
+        }
+        .radio-group label:hover {
+            border-color: var(--primary-color);
+        }
+        .tooltip-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: 700;
+            cursor: help;
+            margin-left: 6px;
+            position: relative;
+            vertical-align: middle;
+            line-height: 1;
+        }
+        .tooltip-icon::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.9);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 400;
+            white-space: normal;
+            width: 240px;
+            text-align: left;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 100;
+            line-height: 1.4;
+        }
+        .tooltip-icon:hover::after {
+            opacity: 1;
+        }
+        .calc-btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--text-color);
+            padding: 14px 36px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+        .calc-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .results-table tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .results-table tr:last-child {
+            border-bottom: none;
+        }
+        .results-table td {
+            padding: 12px 8px;
+        }
+        .results-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+        }
+        .results-total td {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            border-top: 2px solid var(--primary-color);
+            padding-top: 14px;
+        }
+        .results-note {
+            margin-top: var(--spacing-sm);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .results-panel {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+        }
+        .calc-info {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .calc-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .calc-actions button {
+            padding: 10px 20px;
+            border: 1px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background 0.3s, color 0.3s;
+        }
+        .calc-actions button:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+        @media (max-width: 767px) {
+            .calculator-grid { grid-template-columns: 1fr; }
+            .input-row { grid-template-columns: 1fr; }
+            .tab-btn { padding: 10px 14px; font-size: 0.85rem; }
+        }
+        @media print {
+            @page { size: A4; margin: 20mm; }
+            * { color: #000 !important; background: #fff !important; border-color: #000 !important; }
+            .header, .footer, .tab-bar, .calc-btn, .calc-actions, .calc-info, .calculator-grid > div:first-child { display: none !important; }
+            .tab-panel { display: block !important; }
+            .section, .section-practice { padding: 0 !important; margin: 0 !important; }
+            .container { max-width: 100% !important; padding: 0 !important; }
+            .calculator-grid { display: block !important; }
+            .results-panel { display: block !important; box-shadow: none !important; border: none !important; padding: 0 !important; margin: 0 !important; }
+            .results-table { width: 100% !important; font-size: 11pt !important; }
+            .results-table td { padding: 4px 6px !important; }
+            .results-total td { font-weight: bold !important; }
+            .section-title { margin-bottom: 10px !important; }
+            .section-title h1 { font-size: 16pt !important; margin: 0 0 4px 0 !important; }
+            .section-title p { display: none !important; }
+            .results-note { font-size: 8pt !important; margin-top: 4px !important; }
+            .tooltip-icon { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" class="logo" aria-label="Matthee Prokureurs Ing Tuis">
+                <img src="../images/mattheelogo.webp" alt="Matthee Prokureurs Ing logo" width="150" height="60">
+            </a>
+            <button class="menu-toggle" aria-label="Navigasie knoppie" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" aria-label="Hoof navigasie">
+                <a href="../index.html" class="nav-link">Tuis</a>
+                <div class="nav-dropdown">
+                    <span class="nav-link">Geskiedenis</span>
+                    <div class="dropdown-menu">
+                        <a href="../history.html" class="nav-link">Matthee Geskiedenis</a>
+                        <a href="../fochville.html" class="nav-link">Fochville Geskiedenis</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link">Dienste</span>
+                    <div class="dropdown-menu">
+                        <a href="../conveyancing.html" class="nav-link">Aktebesorging</a>
+                        <a href="../notary.html" class="nav-link">Notaris</a>
+                        <a href="../personal-law.html" class="nav-link">Persoonlike Reg</a>
+                        <a href="../associated-valuer.html" class="nav-link">Geassosieerde Waardeerder</a>
+                        <a href="../property-appraiser.html" class="nav-link">Taksateur</a>
+                    </div>
+                </div>
+                <a href="https://costcalculator.korbitec.com/DC046BA0-7AA8-4D6B-9788-DD45BBBD13F8" class="nav-link" target="_blank" rel="noopener noreferrer">Kosteberekenaar</a>
+                <a href="../contact.html" class="nav-link">Kontak</a>
+                <a href="fica.html" class="nav-link">FICA</a>
+                <div class="lang-switch">
+                    <a href="../calculators.html">EN</a>
+                    <a class="active">AF</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section section-practice" aria-labelledby="page-heading">
+            <div class="container">
+                <div class="section-title">
+                    <h1 id="page-heading">KOSTEBEREKENAAR</h1>
+                    <p>Kies 'n berekenaar hieronder om u eiendomskoste te beraam</p>
+                </div>
+
+                <div class="tab-bar">
+                    <button class="tab-btn active" data-tab="transfer-cost" onclick="switchTab('transfer-cost')" type="button">Oordragkoste</button>
+                    <button class="tab-btn" data-tab="bond-cost" onclick="switchTab('bond-cost')" type="button">Verbandkoste</button>
+                    <button class="tab-btn" data-tab="bond-repayment" onclick="switchTab('bond-repayment')" type="button">Verbandterugbetaling</button>
+                </div>
+
+                <div id="tab-transfer-cost" class="tab-panel active">
+                    <div class="calculator-grid">
+                        <div>
+                            <div class="calc-input-group">
+                                <label for="tc-purchasePrice">Eiendomskoopprys<span class="tooltip-icon" data-tooltip="Die totale koopprys van die eiendom soos ooreengekom in die koopkontrak.">?</span></label>
+                                <div class="input-affix">
+                                    <span>R</span>
+                                    <input type="text" id="tc-purchasePrice" inputmode="numeric" placeholder="bv. 1 000 000">
+                                </div>
+                            </div>
+                            <button class="calc-btn" onclick="tcCalculate()" type="button">BEREKEN</button>
+                        </div>
+                        <div class="results-panel" id="tc-resultsPanel" style="display:none">
+                            <table class="results-table">
+                                <tbody id="tc-resultsBody"></tbody>
+                            </table>
+                            <p class="results-note">* Alle gelde sluit BTW in waar van toepassing. Gebaseer op LSSA-riglyntariewe, SARS-oordragbelastingkoerse en amptelike Aktekantoortariewe.</p>
+                            <div class="calc-actions">
+                                <button type="button" onclick="window.print()">Druk</button>
+                                <button type="button" onclick="tcSavePDF()">Stoor as PDF</button>
+                                <button type="button" onclick="tcSendEmail()">E-pos</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-info">
+                        <p>Voer die waarde in soos vereis en klik op die <strong>'BEREKEN'</strong>-knoppie.</p>
+                        <p>Die koste om eiendom in u naam oor te dra, bestaan uit koste verskuldig aan die regering in die vorm van oordragbelasting, regskoste, asook 'n aantal betalings wat die prokureurs moet maak om vrywarings te verkry.</p>
+                        <p>Let asseblief daarop dat alle waardes wat deur die Oordragkoste-Berekenaar teruggegee word, kwotasiewaardes is wat onderworpe is aan verandering.</p>
+                        <p>Alhoewel alle pogings aangewend is om die akkuraatheid van die inhoud te verseker, aanvaar Matthee Prokureurs geen aanspreeklikheid vir enige foute wat hierin vervat is nie. Onder geen omstandighede sal Matthee Prokureurs aanspreeklik wees vir enige verlies of skade wat voortspruit uit die gebruik van hierdie berekenaar nie.</p>
+                    </div>
+                </div>
+
+                <div id="tab-bond-cost" class="tab-panel">
+                    <div class="calculator-grid">
+                        <div>
+                            <div class="calc-input-group">
+                                <label for="bc-bondAmount">Verbandbedrag<span class="tooltip-icon" data-tooltip="Die totale verbandbedrag wat u oor die eiendom wil registreer.">?</span></label>
+                                <div class="input-affix">
+                                    <span>R</span>
+                                    <input type="text" id="bc-bondAmount" inputmode="numeric" placeholder="bv. 1 000 000">
+                                </div>
+                            </div>
+                            <button class="calc-btn" onclick="bcCalculate()" type="button">BEREKEN</button>
+                        </div>
+                        <div class="results-panel" id="bc-resultsPanel" style="display:none">
+                            <table class="results-table">
+                                <tbody id="bc-resultsBody"></tbody>
+                            </table>
+                            <p class="results-note">* Alle gelde sluit BTW in waar van toepassing. Gebaseer op LSSA-riglyntariewe en amptelike Aktekantoortariewe.</p>
+                            <div class="calc-actions">
+                                <button type="button" onclick="window.print()">Druk</button>
+                                <button type="button" onclick="bcSavePDF()">Stoor as PDF</button>
+                                <button type="button" onclick="bcSendEmail()">E-pos</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-info">
+                        <p>Voer die waarde in soos vereis en klik op die <strong>'BEREKEN'</strong>-knoppie.</p>
+                        <p>Daar is regs- en administratiewe koste verbonde aan die registrasie van 'n banklening om die balans van u koopprys te dek. Hierdie koste word vooraf vereis voordat registrasie kan plaasvind.</p>
+                        <p>Let asseblief daarop dat alle waardes wat teruggegee word, kwotasiewaardes is wat onderworpe is aan verandering.</p>
+                        <p>Alhoewel alle pogings aangewend is om die akkuraatheid van die inhoud te verseker, aanvaar Matthee Prokureurs geen aanspreeklikheid vir enige foute wat hierin vervat is nie. Onder geen omstandighede sal Matthee Prokureurs aanspreeklik wees vir enige verlies of skade wat voortspruit uit die gebruik van hierdie berekenaar nie.</p>
+                    </div>
+                </div>
+
+                <div id="tab-bond-repayment" class="tab-panel">
+                    <div class="calculator-grid">
+                        <div>
+                            <div class="calc-input-group">
+                                <label for="br-bondAmount">Verbandbedrag<span class="tooltip-icon" data-tooltip="Die totale verbandbedrag wat u oor die eiendom wil registreer.">?</span></label>
+                                <div class="input-affix">
+                                    <span>R</span>
+                                    <input type="text" id="br-bondAmount" inputmode="numeric" placeholder="bv. 1 000 000">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="calc-input-group">
+                                    <label>Jare om Terug te Betaal<span class="tooltip-icon" data-tooltip="Kies die terugbetalingstermyn waaroor u die verband wil terugbetaal.">?</span></label>
+                                    <div class="radio-group">
+                                        <input type="radio" name="br-years" id="br-yr5" value="5"><label for="br-yr5">5</label>
+                                        <input type="radio" name="br-years" id="br-yr10" value="10"><label for="br-yr10">10</label>
+                                        <input type="radio" name="br-years" id="br-yr20" value="20" checked><label for="br-yr20">20</label>
+                                        <input type="radio" name="br-years" id="br-yr25" value="25"><label for="br-yr25">25</label>
+                                        <input type="radio" name="br-years" id="br-yr30" value="30"><label for="br-yr30">30</label>
+                                    </div>
+                                </div>
+                                <div class="calc-input-group">
+                                    <label for="br-interestRate">Rentekoers (%)<span class="tooltip-icon" data-tooltip="Die jaarlikse rentekoers wat deur u bank gekwoteer is.">?</span></label>
+                                    <input type="text" id="br-interestRate" inputmode="decimal" placeholder="bv. 10.25" value="10.25">
+                                </div>
+                            </div>
+                            <button class="calc-btn" onclick="brCalculate()" type="button">BEREKEN</button>
+                        </div>
+                        <div class="results-panel" id="br-resultsPanel" style="display:none">
+                            <table class="results-table">
+                                <tbody id="br-resultsBody"></tbody>
+                            </table>
+                            <p class="results-note">* Maandelikse terugbetalings word bereken met die standaard leningsamortisasieformule. Werklike koerse en terme mag verskil.</p>
+                            <div class="calc-actions">
+                                <button type="button" onclick="window.print()">Druk</button>
+                                <button type="button" onclick="brSavePDF()">Stoor as PDF</button>
+                                <button type="button" onclick="brSendEmail()">E-pos</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-info">
+                        <p>Voer die waardes in soos vereis en klik op die <strong>'BEREKEN'</strong>-knoppie.</p>
+                        <p>Die verbandterugbetalingsberekenaar sal u help om uit te vind watter maandelikse uitgawe u op u verband kan verwag.</p>
+                        <p>Let asseblief daarop dat alle waardes wat teruggegee word, kwotasiewaardes is wat onderworpe is aan verandering.</p>
+                        <p>Alhoewel alle pogings aangewend is om die akkuraatheid van die inhoud te verseker, aanvaar Matthee Prokureurs geen aanspreeklikheid vir enige foute wat hierin vervat is nie. Onder geen omstandighede sal Matthee Prokureurs aanspreeklik wees vir enige verlies of skade wat voortspruit uit die gebruik van hierdie berekenaar nie.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Dienste</h4>
+                    <a href="../conveyancing.html">Aktebesorging</a>
+                    <a href="../notary.html">Notaris</a>
+                    <a href="../personal-law.html">Persoonlike Reg</a>
+                    <a href="../associated-valuer.html">Geassosieerde Waardeerder</a>
+                    <a href="../property-appraiser.html">Taksateur</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontak Ons</h4>
+                    <a href="../contact.html">Kontak</a>
+                    <a href="../history.html">Geskiedenis</a>
+                    <a href="../privacy-policy.html">Privaatheidsbeleid</a>
+                    <a href="../paia-manual.html">PAIA-Handleiding</a>
+                    <a href="fica.html">FICA Vorm</a>
+                    <a href="../popi-compliance.html">POPI-Nakoming</a>
+                </div>
+                <div class="footer-col">
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/company/matthee-attorneys-inc" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/mattheeproc" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/mattheeproc" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://wa.me/27609682379" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <div class="footer-affiliations">
+                        <a href="https://www.lssa.org.za/" target="_blank" rel="noopener noreferrer"><img src="../images/LSSA.webp" alt="Law Society of South Africa" loading="lazy" width="150" height="60"></a>
+                        <a href="https://www.sacpvp.co.za/registered-persons" target="_blank" rel="noopener noreferrer"><img src="../images/sacpvp.webp" alt="South African Council for the Property Valuers Profession" loading="lazy" width="150" height="60"></a>
+                        <a href="https://saiv.org.za/member-directory/dawid-matthee/" target="_blank" rel="noopener noreferrer"><img src="../images/SAIV.webp" alt="South African Institute of Valuers" loading="lazy" width="150" height="60"></a>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; <span id="year"></span> Matthee Prokureurs Ing. Alle Regte Voorbehou. | Web design deur <a href="https://compourri.co.za" target="_blank" rel="noopener">Compourri</a></p>
+        </div>
+    </footer>
+
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="Spanlid foto">
+        <button class="lightbox-close" aria-label="Maak ligkas toe">&times;</button>
+        <div class="lightbox-content">
+            <img class="lightbox-image" src="" alt="">
+            <p class="lightbox-name"></p>
+            <p class="lightbox-role"></p>
+        </div>
+    </div>
+
+    <script src="../js/jspdf.umd.min.js"></script>
+    <script src="../js/main.js" type="module"></script>
+    <script>
+    function switchTab(tabId) {
+        document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.getElementById('tab-' + tabId).classList.add('active');
+        document.querySelector('[data-tab="' + tabId + '"]').classList.add('active');
+    }
+
+    function parsePrice(value) {
+        return parseFloat(value.replace(/[^0-9.]/g, '')) || 0;
+    }
+
+    function formatCurrency(amount) {
+        if (isNaN(amount)) return 'R 0,00';
+        return 'R ' + amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' ').replace(/\./g, ',');
+    }
+
+    function calcAttorneyFee(price) {
+        if (price <= 100000) return 6640;
+        if (price <= 500000) {
+            var base = 6640;
+            var extra = Math.ceil((price - 100000) / 50000) * 1060;
+            return base + extra;
+        }
+        if (price <= 1000000) {
+            var base = 15120;
+            var extra = Math.ceil((price - 500000) / 100000) * 2050;
+            return base + extra;
+        }
+        if (price <= 5000000) {
+            var base = 25370;
+            var extra = Math.ceil((price - 1000000) / 200000) * 2050;
+            return base + extra;
+        }
+        var base = 66370;
+        var extra = Math.ceil((price - 5000000) / 1000000) * 5160;
+        return base + extra;
+    }
+
+    function calcDeedsFee(price) {
+        if (price <= 100000) return 50;
+        if (price <= 200000) return 114;
+        if (price <= 300000) return 727;
+        if (price <= 600000) return 956;
+        if (price <= 800000) return 1346;
+        if (price <= 1000000) return 1546;
+        if (price <= 2000000) return 1738;
+        if (price <= 4000000) return 2408;
+        if (price <= 6000000) return 2922;
+        if (price <= 8000000) return 3480;
+        if (price <= 10000000) return 4068;
+        if (price <= 15000000) return 4844;
+        if (price <= 20000000) return 5818;
+        return 7751;
+    }
+
+    function calcTransferDuty(price) {
+        if (price <= 1210000) return 0;
+        if (price <= 1663800) return (price - 1210000) * 0.03;
+        if (price <= 2329300) return 13614 + (price - 1663800) * 0.06;
+        if (price <= 2994800) return 53544 + (price - 2329300) * 0.08;
+        if (price <= 13310000) return 106784 + (price - 2994800) * 0.11;
+        return 1241456 + (price - 13310000) * 0.13;
+    }
+
+    function calcMonthlyPayment(principal, annualRate, years) {
+        var r = annualRate / 100 / 12;
+        var n = years * 12;
+        if (r === 0) return principal / n;
+        var factor = Math.pow(1 + r, n);
+        return principal * r * factor / (factor - 1);
+    }
+
+    /* ===== Gedeelde Druk / PDF Helpers ===== */
+    function getCalculatorResultsData(tabId, alertText) {
+        var titleText = document.querySelector('.section-title h1').textContent.trim();
+        var panel = document.getElementById('tab-' + tabId);
+        var resultsPanel = panel.querySelector('.results-panel');
+        var resultsBody = resultsPanel.querySelector('tbody');
+        var rows = [];
+        resultsBody.querySelectorAll('tr').forEach(function(tr) {
+            var cells = tr.querySelectorAll('td');
+            if (cells.length === 2) {
+                rows.push({
+                    label: cells[0].textContent.trim().replace(/\s*\?\s*$/, ''),
+                    value: cells[1].textContent.trim(),
+                    total: tr.classList.contains('results-total')
+                });
+            }
+        });
+
+        if (!rows.length) {
+            alert(alertText);
+            return null;
+        }
+
+        var note = resultsPanel.querySelector('.results-note');
+        return {
+            title: titleText,
+            rows: rows,
+            note: note ? note.textContent.trim() : ''
+        };
+    }
+
+    function isValidEmailAddress(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function sendCalculatorEmail(tabId, alertText, subject, disclaimer) {
+        var data = getCalculatorResultsData(tabId, alertText);
+        if (!data) return;
+
+        var userEmail = prompt('Voer jou e-posadres in om hierdie beraming te ontvang:');
+        if (userEmail === null) return;
+
+        userEmail = userEmail.trim();
+        if (!userEmail) return;
+
+        if (!isValidEmailAddress(userEmail)) {
+            alert('Voer asseblief \'n geldige e-posadres in.');
+            return;
+        }
+
+        fetch('/api/send-calculator-email.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: userEmail,
+                subject: subject,
+                title: data.title,
+                rows: data.rows,
+                note: data.note,
+                disclaimer: disclaimer
+            })
+        })
+        .then(function(response) {
+            return response.json().then(function(payload) {
+                return { ok: response.ok, payload: payload };
+            });
+        })
+        .then(function(result) {
+            if (result.ok && result.payload.success) {
+                alert('Jou beraming is na ' + userEmail + ' gestuur.');
+                return;
+            }
+            alert(result.payload.error || 'Kon nie die e-pos stuur nie. Probeer asseblief later weer.');
+        })
+        .catch(function() {
+            alert('Kon nie die e-pos stuur nie. Probeer asseblief later weer.');
+        });
+    }
+
+    function saveCalculatorPDF(tabId, alertText, filename) {
+        var data = getCalculatorResultsData(tabId, alertText);
+        if (!data) return;
+
+        var JsPDF = (window.jspdf && window.jspdf.jsPDF) || window.jsPDF;
+        if (!JsPDF) {
+            alert('PDF-biblioteek kon nie gelaai word nie. Verfris asseblief die bladsy en probeer weer.');
+            return;
+        }
+
+        var doc = new JsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
+        var margin = 20;
+        var pageWidth = doc.internal.pageSize.getWidth();
+        var pageHeight = doc.internal.pageSize.getHeight();
+        var contentWidth = pageWidth - (margin * 2);
+        var y = margin;
+
+        doc.setTextColor(0, 0, 0);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(16);
+        doc.text(data.title, margin, y);
+        y += 12;
+
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(11);
+
+        data.rows.forEach(function(row) {
+            if (!row.label && !row.value) {
+                y += 4;
+                return;
+            }
+            if (y > pageHeight - margin) {
+                doc.addPage();
+                y = margin;
+            }
+            if (row.total) {
+                y += 3;
+                doc.setLineWidth(0.5);
+                doc.setDrawColor(0, 0, 0);
+                doc.line(margin, y, pageWidth - margin, y);
+                y += 7;
+                doc.setFont('helvetica', 'bold');
+            }
+
+            doc.text(row.label, margin, y);
+            doc.text(row.value, pageWidth - margin, y, { align: 'right' });
+
+            if (row.total) {
+                doc.setFont('helvetica', 'normal');
+            } else {
+                doc.setDrawColor(0, 0, 0);
+                doc.setLineWidth(0.1);
+                doc.line(margin, y + 2, pageWidth - margin, y + 2);
+            }
+            y += 6;
+        });
+
+        if (data.note) {
+            y += 4;
+            if (y > pageHeight - margin - 10) {
+                doc.addPage();
+                y = margin;
+            }
+            doc.setFontSize(8);
+            doc.text(doc.splitTextToSize(data.note, contentWidth), margin, y);
+        }
+
+        doc.save(filename);
+    }
+
+    /* ===== Verbandkoste-Berekenaar ===== */
+    function bcCalculate() {
+        var input = document.getElementById('bc-bondAmount');
+        var raw = input.value.trim();
+        if (!raw) { alert('Voer asseblief \'n verbandbedrag in.'); return; }
+        var price = parsePrice(raw);
+        if (price <= 0) { alert('Voer asseblief \'n geldige verbandbedrag in.'); return; }
+        var attorneyExcl = calcAttorneyFee(price);
+        var attorneyIncl = attorneyExcl * 1.15;
+        var deedsFee = calcDeedsFee(price);
+        var postages = 920, elecGen = 402.50, elecInstruction = 575, deedsSearches = 138;
+        var subtotal = attorneyIncl + deedsFee + postages + elecGen + elecInstruction + deedsSearches;
+        var rows = [
+            { label: 'Verbandbedrag', value: formatCurrency(price), highlight: false },
+            { label: '', value: '', highlight: false },
+            { label: 'Verbandprokureursgelde', value: formatCurrency(attorneyIncl), highlight: false, tooltip: 'Fooi voorgeskryf deur die Regsgenootskap van Suid-Afrika en bereken op grond van die verbandbedrag.' },
+            { label: 'Posgeld & Kleinuitgawes', value: formatCurrency(postages), highlight: false, tooltip: 'Koste aangegaan soos telefoonkoste, posgeld en koerierfooie, administratiefooie en bankkoste.' },
+            { label: 'Aktekantoorgelde', value: formatCurrency(deedsFee), highlight: false, tooltip: 'Fooie gepubliseer in die Staatskoerant en bereken op grond van die verbandbedrag.' },
+            { label: 'Elektroniese Generasiefooi', value: formatCurrency(elecGen), highlight: false, tooltip: 'Fooie aangegaan vir die generering van elektroniese dokumente' },
+            { label: 'Elektroniese Instruksiefooi', value: formatCurrency(elecInstruction), highlight: false, tooltip: 'Fooie aangegaan wanneer \'n Bank elektronies geïnstrueer word.' },
+            { label: 'Aktekantooropsoektogte', value: formatCurrency(deedsSearches), highlight: false, tooltip: 'Aktekantooropsoekfooie om te verseker dat daar geen voorwaardes is wat die eiendomstransaksie mag verhoed nie.' },
+            { label: '', value: '', highlight: false },
+            { label: 'Totale Verbandkoste (incl BTW)', value: formatCurrency(subtotal), highlight: true }
+        ];
+        var tbody = document.getElementById('bc-resultsBody');
+        tbody.innerHTML = '';
+        rows.forEach(function(row) {
+            var tr = document.createElement('tr');
+            if (row.highlight) tr.className = 'results-total';
+            if (row.label === '' && row.value === '') tr.style.height = '8px';
+            var td1 = document.createElement('td');
+            if (row.tooltip) {
+                td1.innerHTML = row.label + ' <span class="tooltip-icon" data-tooltip="' + row.tooltip.replace(/"/g, '&quot;') + '">?</span>';
+            } else {
+                td1.textContent = row.label;
+            }
+            var td2 = document.createElement('td');
+            td2.textContent = row.value;
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tbody.appendChild(tr);
+        });
+        var panel = document.getElementById('bc-resultsPanel');
+        panel.style.display = 'block';
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function bcSavePDF() {
+        saveCalculatorPDF('bond-cost', 'Voer asseblief eers een verbandkoste-beraming in.', 'verbandkoste-beraming.pdf');
+    }
+
+    function bcSendEmail() {
+        sendCalculatorEmail(
+            'bond-cost',
+            'Voer asseblief eers een verbandkoste-beraming in.',
+            'Verbandkoste-Beraming',
+            'Vrywaring: Hierdie is slegs \'n skatting. Werklike koste mag verskil.'
+        );
+    }
+
+    document.getElementById('bc-bondAmount').addEventListener('keydown', function(e) { if (e.key === 'Enter') bcCalculate(); });
+
+    /* ===== Verbandterugbetalings-Berekenaar ===== */
+    function brCalculate() {
+        var amountInput = document.getElementById('br-bondAmount');
+        var raw = amountInput.value.trim();
+        if (!raw) { alert('Voer asseblief \'n verbandbedrag in.'); return; }
+        var principal = parsePrice(raw);
+        if (principal <= 0) { alert('Voer asseblief \'n geldige verbandbedrag in.'); return; }
+        var years = parseInt(document.querySelector('input[name="br-years"]:checked').value);
+        if (isNaN(years) || years < 1) { alert('Voer asseblief \'n geldige aantal jare in.'); return; }
+        var rateStr = document.getElementById('br-interestRate').value.trim().replace(',', '.');
+        var annualRate = parseFloat(rateStr);
+        if (isNaN(annualRate) || annualRate <= 0) { alert('Voer asseblief \'n geldige rentekoers in.'); return; }
+        var monthly = calcMonthlyPayment(principal, annualRate, years);
+        var totalRepayment = monthly * years * 12;
+        var totalInterest = totalRepayment - principal;
+        var rows = [
+            { label: 'Verbandbedrag', value: formatCurrency(principal), highlight: false },
+            { label: 'Jaarlikse Rentekoers', value: annualRate.toFixed(2) + '%', highlight: false },
+            { label: 'Terugbetalingstermyn', value: years + ' jaar', highlight: false },
+            { label: '', value: '', highlight: false },
+            { label: 'Totale Maandelikse Koste', value: formatCurrency(monthly), highlight: true },
+            { label: 'Renteterugbetaling', value: formatCurrency(totalInterest), highlight: false, tooltip: 'Die totale bedrag aan rente wat terugbetaal sal word.' },
+            { label: 'Totale Lenings Terugbetaling', value: formatCurrency(totalRepayment), highlight: false, tooltip: 'Die totale bedrag wat terugbetaal moet word, insluitend die kapitaalbedrag en die rentebedrag.' }
+        ];
+        var tbody = document.getElementById('br-resultsBody');
+        tbody.innerHTML = '';
+        rows.forEach(function(row) {
+            var tr = document.createElement('tr');
+            if (row.highlight) tr.className = 'results-total';
+            if (row.label === '' && row.value === '') tr.style.height = '8px';
+            var td1 = document.createElement('td');
+            if (row.tooltip) {
+                td1.innerHTML = row.label + ' <span class="tooltip-icon" data-tooltip="' + row.tooltip.replace(/"/g, '&quot;') + '">?</span>';
+            } else {
+                td1.textContent = row.label;
+            }
+            var td2 = document.createElement('td');
+            td2.textContent = row.value;
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tbody.appendChild(tr);
+        });
+        var panel = document.getElementById('br-resultsPanel');
+        panel.style.display = 'block';
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function brSavePDF() {
+        saveCalculatorPDF('bond-repayment', 'Voer asseblief eers een verbandterugbetalings-beraming in.', 'verbandterugbetaling-beraming.pdf');
+    }
+
+    function brSendEmail() {
+        sendCalculatorEmail(
+            'bond-repayment',
+            'Voer asseblief eers een verbandterugbetalings-beraming in.',
+            'Verbandterugbetalings-Beraming',
+            'Vrywaring: Hierdie is slegs \'n skatting. Werklike koste mag verskil.'
+        );
+    }
+
+    document.getElementById('br-bondAmount').addEventListener('keydown', function(e) { if (e.key === 'Enter') brCalculate(); });
+    document.getElementById('br-interestRate').addEventListener('keydown', function(e) { if (e.key === 'Enter') brCalculate(); });
+
+    document.getElementById('bc-bondAmount').addEventListener('keydown', function(e) { if (e.key === 'Enter') bcCalculate(); });
+    document.getElementById('br-bondAmount').addEventListener('keydown', function(e) { if (e.key === 'Enter') brCalculate(); });
+    document.getElementById('br-interestRate').addEventListener('keydown', function(e) { if (e.key === 'Enter') brCalculate(); });
+    document.getElementById('tc-purchasePrice').addEventListener('keydown', function(e) { if (e.key === 'Enter') tcCalculate(); });
+
+    /* ===== Oordragkoste-Berekenaar ===== */
+    function tcCalculate() {
+        var input = document.getElementById('tc-purchasePrice');
+        var raw = input.value.trim();
+        if (!raw) { alert('Voer asseblief \'n eiendomskoopprys in.'); return; }
+        var price = parsePrice(raw);
+        if (price <= 0) { alert('Voer asseblief \'n geldige koopprys in.'); return; }
+        var attorneyExcl = calcAttorneyFee(price);
+        var attorneyIncl = attorneyExcl * 1.15;
+        var deedsFee = calcDeedsFee(price);
+        var transferDuty = calcTransferDuty(price);
+        var postages = 920, elecGen = 322, fica = 393.30, deedsSearches = 138, ratesClearance = 138;
+        var subtotal = attorneyIncl + deedsFee + transferDuty + postages + elecGen + fica + deedsSearches + ratesClearance;
+        var rows = [
+            { label: 'Eiendomskoopprys', value: formatCurrency(price), highlight: false },
+            { label: '', value: '', highlight: false },
+            { label: 'Oordragprokureursgelde', value: formatCurrency(attorneyIncl), highlight: false, tooltip: 'Fooi voorgeskryf deur die Regsgenootskap van Suid-Afrika en bereken op grond van die koopprys van die eiendom.' },
+            { label: 'Posgeld & Kleinuitgawes', value: formatCurrency(postages), highlight: false, tooltip: "'n Fooi bereken met verwysing na die Oordragfooie vir administrasie-kostes en wetgewende nakoming." },
+            { label: 'Aktekantoorgelde', value: formatCurrency(deedsFee), highlight: false, tooltip: 'Fooie gepubliseer in die Staatskoerant en bereken op grond van die koopprys van die eiendom.' },
+            { label: 'Elektroniese Generasiefooi', value: formatCurrency(elecGen), highlight: false, tooltip: 'Fooie aangegaan vir die generering van elektroniese dokumente' },
+            { label: 'FICA', value: formatCurrency(fica), highlight: false, tooltip: 'Koste aangegaan wanneer die identiteit van \'n kliënt geverifieer word voordat \'n besigheidsverhouding met hulle aangegaan word.' },
+            { label: 'Aktekantooropsoektogte', value: formatCurrency(deedsSearches), highlight: false, tooltip: 'Aktekantooropsoekfooie om te verseker dat daar geen voorwaardes is wat die eiendomstransaksie mag verhoed nie.' },
+            { label: 'Tarieweskikkingsfooie', value: formatCurrency(ratesClearance), highlight: false, tooltip: '\'n Tarieweskikkingsertifikaat moet verkry word om te bevestig dat daar geen uitstaande tariewe en belasting betaalbaar deur die Verkoper van die Eiendom is nie.' },
+            { label: 'Oordragbelasting', value: formatCurrency(transferDuty), highlight: false, tooltip: 'Belasting gehef deur die Regering op eiendomstransaksies' },
+            { label: '', value: '', highlight: false },
+            { label: 'Totale Oordragkoste (incl BTW)', value: formatCurrency(subtotal), highlight: true }
+        ];
+        var tbody = document.getElementById('tc-resultsBody');
+        tbody.innerHTML = '';
+        rows.forEach(function(row) {
+            var tr = document.createElement('tr');
+            if (row.highlight) tr.className = 'results-total';
+            if (row.label === '' && row.value === '') tr.style.height = '8px';
+            var td1 = document.createElement('td');
+            if (row.tooltip) {
+                td1.innerHTML = row.label + ' <span class="tooltip-icon" data-tooltip="' + row.tooltip.replace(/"/g, '&quot;') + '">?</span>';
+            } else {
+                td1.textContent = row.label;
+            }
+            var td2 = document.createElement('td');
+            td2.textContent = row.value;
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tbody.appendChild(tr);
+        });
+        var panel = document.getElementById('tc-resultsPanel');
+        panel.style.display = 'block';
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function tcSavePDF() {
+        saveCalculatorPDF('transfer-cost', 'Voer asseblief eers een oordragkoste-beraming in.', 'oordragkoste-beraming.pdf');
+    }
+
+    function tcSendEmail() {
+        sendCalculatorEmail(
+            'transfer-cost',
+            'Voer asseblief eers een oordragkoste-beraming in.',
+            'Oordragkoste-Beraming',
+            'Vrywaring: Hierdie is slegs \'n skatting. Werklike koste mag verskil.'
+        );
+    }
+
+    document.getElementById('tc-purchasePrice').addEventListener('keydown', function(e) { if (e.key === 'Enter') tcCalculate(); });
+    </script>
+</body>
+</html>
