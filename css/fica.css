@@ -1,0 +1,199 @@
+.fica-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+.fica-header h2 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+.fica-header .fica-contact {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+.fica-header .fica-contact a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.fica-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+.fica-required {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-lg);
+    padding: 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.03);
+}
+.fica-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+.fica-applicant {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: var(--spacing-md);
+}
+.fica-applicant h3 {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+.fica-section {
+    margin-bottom: var(--spacing-md);
+}
+.fica-section-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.fica-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 0;
+    margin-bottom: 2px;
+}
+.fica-row label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 6px 8px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-color);
+    border-right: none;
+    display: flex;
+    align-items: center;
+    color: var(--text-muted);
+}
+.fica-row input, .fica-row select {
+    width: 100%;
+    padding: 6px 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+}
+.fica-row select option {
+    color: #000;
+    background: #fff;
+}
+.fica-row input:focus, .fica-row select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+.fica-full {
+    margin-bottom: 2px;
+}
+.fica-full label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: var(--text-muted);
+}
+.fica-full input, .fica-full textarea {
+    width: 100%;
+    padding: 8px 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+}
+.fica-full textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+.fica-full input:focus, .fica-full textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+.fica-upload-section {
+    margin-top: var(--spacing-lg);
+}
+.fica-upload-section h3 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+.upload-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+}
+.upload-item {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-md);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+.upload-item:hover {
+    border-color: var(--primary-color);
+    background: rgba(255,255,255,0.03);
+}
+.upload-item input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.upload-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+    display: block;
+}
+.upload-item span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: block;
+}
+.upload-item .upload-status {
+    font-size: 0.75rem;
+    color: #4caf50;
+    margin-top: 4px;
+    display: none;
+}
+.upload-item.has-file .upload-status {
+    display: block;
+}
+.fica-submit {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+.fica-submit button {
+    padding: 14px 48px;
+    font-size: 1rem;
+}
+@media (max-width: 767px) {
+    .fica-grid { grid-template-columns: 1fr; }
+    .fica-row { grid-template-columns: 120px 1fr; }
+    .upload-grid { grid-template-columns: 1fr; }
+}
+@media print {
+    .header, .footer, .fica-submit, .upload-item input[type="file"] { display: none !important; }
+    .upload-item { border-style: solid; border-color: #000; }
+}

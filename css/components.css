@@ -388,6 +388,19 @@
     display: block;
 }
 
+.team-read-more {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.team-read-more:hover {
+    opacity: 0.8;
+}
+
 /* Lightbox */
 .lightbox {
     display: none;

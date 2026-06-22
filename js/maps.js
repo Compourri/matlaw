@@ -2,11 +2,11 @@ function initMap() {
     var mapEl = document.getElementById('map');
     if (!mapEl || typeof google === 'undefined') return;
 
-    var position = { lat: -26.4928, lng: 27.4930 };
+    var position = { lat: -26.4923, lng: 27.4970 };
 
-    new google.maps.Map(mapEl, {
+    var map = new google.maps.Map(mapEl, {
         center: position,
-        zoom: 16,
+        zoom: 17,
         disableDefaultUI: true,
         styles: [
             { elementType: 'geometry', stylers: [{ color: '#1a1a1a' }] },
@@ -50,19 +50,19 @@ function initMap() {
         ]
     });
 
-    var icon = {
-        path: google.maps.SymbolPath.CIRCLE,
-        scale: 10,
-        fillColor: '#c59d55',
-        fillOpacity: 1,
-        strokeColor: '#ffffff',
-        strokeWeight: 2
-    };
-
-    new google.maps.Marker({
+    var marker = new google.maps.Marker({
         position: position,
         map: map,
-        icon: icon,
-        title: 'Matthee Attorneys Inc'
+        title: 'Matthee Attorneys Inc.'
     });
+
+    var infoWindow = new google.maps.InfoWindow({
+        content: '<div style="color:#000;font-family:sans-serif;font-size:13px;line-height:1.4"><strong>Matthee Attorneys Inc.</strong><br>49 Kerk Street<br>Fochville, Gauteng 2515<br>Tel: 018 771 2041</div>'
+    });
+
+    marker.addListener('click', function() {
+        infoWindow.open(map, marker);
+    });
+
+    infoWindow.open(map, marker);
 }

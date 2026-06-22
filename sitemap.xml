@@ -119,6 +119,34 @@
         <changefreq>monthly</changefreq>
     </url>
     <url>
+        <loc>https://matlaw.africa/calculators.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/calculators.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/calculators.html"/>
+        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/calculators.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/calculators.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/calculators.html"/>
+        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/fica.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/fica.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/fica.html"/>
+        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://matlaw.africa/afr/fica.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/fica.html"/>
+        <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/fica.html"/>
+        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
         <loc>https://matlaw.africa/privacy-policy.html</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://matlaw.africa/privacy-policy.html"/>
         <xhtml:link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/privacy-policy.html"/>

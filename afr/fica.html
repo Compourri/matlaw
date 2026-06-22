@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>FICA Vorm | Matthee Prokureurs Ing</title>
+    <title>FICA Vorm | Matthee Prokureurs Ing.</title>
     <link rel="icon" type="image/webp" href="/images/golden-scales-of-justice-png.webp">
     <meta name="description" content="Voltooi die FICA- en Kontakinligtingsvorm vir Verbande by Matthee Prokureurs Ing. Laai u ID, bewys van adres en ander vereiste dokumente op.">
     <link rel="canonical" href="https://matlaw.africa/afr/fica.html">
     <link rel="alternate" hreflang="en" href="https://matlaw.africa/fica.html">
     <link rel="alternate" hreflang="af" href="https://matlaw.africa/afr/fica.html">
 
-    <meta property="og:title" content="FICA Vorm | Matthee Prokureurs Ing">
+    <meta property="og:title" content="FICA Vorm | Matthee Prokureurs Ing.">
     <meta property="og:description" content="Voltooi die FICA- en Kontakinligtingsvorm vir Verbande. Laai u ID, bewys van adres en ander vereiste dokumente op.">
     <meta property="og:image" content="https://matlaw.africa/images/mattheelogo.webp">
     <meta property="og:url" content="https://matlaw.africa/afr/fica.html">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="FICA Vorm | Matthee Prokureurs Ing">
+    <meta name="twitter:title" content="FICA Vorm | Matthee Prokureurs Ing.">
     <meta name="twitter:description" content="Voltooi die FICA- en Kontakinligtingsvorm vir Verbande. Laai u ID, bewys van adres en ander vereiste dokumente op.">
     <meta name="twitter:image" content="https://matlaw.africa/images/mattheelogo.webp">
 
@@ -29,209 +29,13 @@
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .fica-header {
-            text-align: center;
-            margin-bottom: var(--spacing-lg);
-        }
-        .fica-header h2 {
-            font-size: 1.1rem;
-            color: var(--primary-color);
-            margin-bottom: 4px;
-        }
-        .fica-header .fica-contact {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-        .fica-header .fica-contact a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        .fica-note {
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-        }
-        .fica-required {
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-color);
-            margin-bottom: var(--spacing-lg);
-            padding: 12px;
-            border: 1px solid var(--primary-color);
-            border-radius: var(--radius-sm);
-            background: rgba(255,255,255,0.03);
-        }
-        .fica-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-lg);
-        }
-        .fica-applicant {
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: var(--spacing-md);
-        }
-        .fica-applicant h3 {
-            text-align: center;
-            font-size: 1rem;
-            color: var(--primary-color);
-            margin-bottom: var(--spacing-md);
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .fica-section {
-            margin-bottom: var(--spacing-md);
-        }
-        .fica-section-title {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            padding: 4px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .fica-row {
-            display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 0;
-            margin-bottom: 2px;
-        }
-        .fica-row label {
-            font-size: 0.8rem;
-            font-weight: 500;
-            padding: 6px 8px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border-color);
-            border-right: none;
-            display: flex;
-            align-items: center;
-            color: var(--text-muted);
-        }
-        .fica-row input, .fica-row select {
-            width: 100%;
-            padding: 6px 10px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            font-family: var(--font-primary);
-            font-size: 0.85rem;
-        }
-        .fica-row input:focus, .fica-row select:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        .fica-full {
-            margin-bottom: 2px;
-        }
-        .fica-full label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-bottom: 4px;
-            color: var(--text-muted);
-        }
-        .fica-full input, .fica-full textarea {
-            width: 100%;
-            padding: 8px 10px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            font-family: var(--font-primary);
-            font-size: 0.85rem;
-            border-radius: var(--radius-sm);
-        }
-        .fica-full textarea {
-            resize: vertical;
-            min-height: 60px;
-        }
-        .fica-full input:focus, .fica-full textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        .fica-upload-section {
-            margin-top: var(--spacing-lg);
-        }
-        .fica-upload-section h3 {
-            font-size: 1rem;
-            color: var(--primary-color);
-            margin-bottom: var(--spacing-md);
-            text-align: center;
-        }
-        .upload-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-sm);
-        }
-        .upload-item {
-            border: 2px dashed var(--border-color);
-            border-radius: var(--radius-sm);
-            padding: var(--spacing-md);
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-        }
-        .upload-item:hover {
-            border-color: var(--primary-color);
-            background: rgba(255,255,255,0.03);
-        }
-        .upload-item input[type="file"] {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            cursor: pointer;
-        }
-        .upload-item i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 6px;
-            display: block;
-        }
-        .upload-item span {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            display: block;
-        }
-        .upload-item .upload-status {
-            font-size: 0.75rem;
-            color: #4caf50;
-            margin-top: 4px;
-            display: none;
-        }
-        .upload-item.has-file .upload-status {
-            display: block;
-        }
-        .fica-submit {
-            text-align: center;
-            margin-top: var(--spacing-lg);
-        }
-        .fica-submit button {
-            padding: 14px 48px;
-            font-size: 1rem;
-        }
-        @media (max-width: 767px) {
-            .fica-grid { grid-template-columns: 1fr; }
-            .fica-row { grid-template-columns: 120px 1fr; }
-            .upload-grid { grid-template-columns: 1fr; }
-        }
-        @media print {
-            .header, .footer, .fica-submit, .upload-item input[type="file"] { display: none !important; }
-            .upload-item { border-style: solid; border-color: #000; }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/fica.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Matthee Prokureurs Ing Tuis">
-                <img src="../images/mattheelogo.webp" alt="Matthee Prokureurs Ing logo" width="150" height="60">
+            <a href="../index.html" class="logo" aria-label="Matthee Prokureurs Ing. Tuis">
+                <img src="../images/mattheelogo.webp" alt="Matthee Prokureurs Ing. logo" width="150" height="60">
             </a>
             <button class="menu-toggle" aria-label="Navigasie knoppie" aria-expanded="false">
                 <span></span>
@@ -277,7 +81,7 @@
                 <p class="fica-note">Nota: Ons mag volgens die wet nie ons dokumente vir handtekening teken voordat FICA-nakoming hierin plaasvind nie</p>
 
                 <div class="fica-required">
-                    VERSOEK ASSEBLIEF kopiee van: U ID-kaart voor &amp; agter, bewys van woonadres, huweliksgetuigskrif &amp; Ante Nuptial Contract
+                    VERSOEK ASSEBLIEF kopiee van: U ID-kaart voor &amp; agter, bewys van woonadres, huweliksgetuigskrif &amp; Huweliksvoorwaarde kontrak
                 </div>
 
                 <form id="ficaForm" novalidate aria-label="FICA vorm">
@@ -302,7 +106,7 @@
                                         <option value="">Kies</option>
                                         <option value="in_community">In Gemeenskap van Goedere</option>
                                         <option value="out_community">Buite Gemeenskap van Goedere</option>
-                                        <option value="anc">Ante Nuptial Contract</option>
+                                        <option value="anc">Huweliksvoorwaarde kontrak</option>
                                         <option value="single">Enkellopend</option>
                                         <option value="widowed">Weduwee/Wewenaar</option>
                                     </select>
@@ -420,7 +224,7 @@
                                         <option value="">Kies</option>
                                         <option value="in_community">In Gemeenskap van Goedere</option>
                                         <option value="out_community">Buite Gemeenskap van Goedere</option>
-                                        <option value="anc">Ante Nuptial Contract</option>
+                                        <option value="anc">Huweliksvoorwaarde kontrak</option>
                                         <option value="single">Enkellopend</option>
                                         <option value="widowed">Weduwee/Wewenaar</option>
                                     </select>
@@ -550,7 +354,7 @@
                             <div class="upload-item" id="upload-anc">
                                 <input type="file" accept=".pdf,.jpg,.jpeg,.png" id="file-anc" name="file_anc">
                                 <i class="fa-solid fa-file-contract"></i>
-                                <span>Ante Nuptial Contract</span>
+                                <span>Huweliksvoorwaarde kontrak</span>
                                 <div class="upload-status"><i class="fa-solid fa-check"></i> Leer gekies</div>
                             </div>
                         </div>
@@ -589,6 +393,7 @@
                         <a href="https://www.facebook.com/mattheeproc" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="https://x.com/mattheeproc" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="https://wa.me/27609682379" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/matlaw.africa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                     <div class="footer-affiliations">
                         <a href="https://www.lssa.org.za/" target="_blank" rel="noopener noreferrer"><img src="../images/LSSA.webp" alt="Regsgenootskap van Suid-Afrika" loading="lazy" width="150" height="60"></a>
@@ -597,61 +402,11 @@
                     </div>
                 </div>
             </div>
-            <p class="footer-copy">&copy; <span id="year"></span> Matthee Prokureurs Ing. Alle Regte Voorbehou. | Webontwerp deur <a href="https://compourri.co.za" target="_blank" rel="noopener">Compourri</a></p>
+            <p class="footer-copy">&copy; <span id="year"></span> Matthee Prokureurs Ing. Alle Regte Voorbehou. | Reg nr: 2017/005850/21 | Firma nr: 782 | Webontwerp deur <a href="https://compourri.co.za" target="_blank" rel="noopener">Compourri</a></p>
         </div>
     </footer>
 
     <script src="../js/main.js" type="module"></script>
-    <script>
-    document.querySelectorAll('.upload-item input[type="file"]').forEach(function(input) {
-        input.addEventListener('change', function() {
-            var item = this.closest('.upload-item');
-            if (this.files && this.files.length > 0) {
-                item.classList.add('has-file');
-            } else {
-                item.classList.remove('has-file');
-            }
-        });
-    });
-
-    document.getElementById('ficaForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var form = this;
-        var submitBtn = form.querySelector('button[type="submit"]');
-        var originalText = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'STUUR...';
-
-        var formData = new FormData(form);
-
-        fetch('/api/send-fica.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(function(response) {
-            return response.json().then(function(payload) {
-                return { ok: response.ok, payload: payload };
-            });
-        })
-        .then(function(result) {
-            if (result.ok && result.payload.success) {
-                alert('Dankie. U FICA-vorm is gestuur na vicki@matlaw.africa. Ons sal u binnekort kontak.');
-                form.reset();
-                document.querySelectorAll('.upload-item').forEach(function(item) {
-                    item.classList.remove('has-file');
-                });
-            } else {
-                alert(result.payload.error || 'Kon die vorm nie stuur nie. Probeer asseblief weer later.');
-            }
-        })
-        .catch(function() {
-            alert('Kon die vorm nie stuur nie. Probeer asseblief weer later.');
-        })
-        .finally(function() {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
-        });
-    });
-    </script>
+    <script src="../js/fica.js"></script>
 </body>
 </html>

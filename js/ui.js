@@ -22,13 +22,15 @@ export function initLightbox() {
     const lightboxImg = lightbox.querySelector('.lightbox-image');
     const lightboxName = lightbox.querySelector('.lightbox-name');
     const lightboxRole = lightbox.querySelector('.lightbox-role');
+    const lightboxBio = lightbox.querySelector('.lightbox-bio');
     const closeBtn = lightbox.querySelector('.lightbox-close');
 
-    function openLightbox(src, alt, name, role, isRound) {
+    function openLightbox(src, alt, name, role, bio, isRound) {
         lightboxImg.src = src;
         lightboxImg.alt = alt;
         lightboxName.textContent = name;
         lightboxRole.textContent = role || '';
+        if (lightboxBio) lightboxBio.innerHTML = bio || '';
         lightboxImg.classList.toggle('lightbox-image--round', isRound);
         lightbox.classList.add('open');
         document.body.style.overflow = 'hidden';
@@ -36,13 +38,13 @@ export function initLightbox() {
 
     document.querySelectorAll('.team-photo-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            openLightbox(btn.dataset.image, btn.dataset.name, btn.dataset.name, btn.dataset.role, true);
+            openLightbox(btn.dataset.image, btn.dataset.name, btn.dataset.name, btn.dataset.role, btn.dataset.bio, true);
         });
     });
 
     document.querySelectorAll('.koerant-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            openLightbox(btn.dataset.image, btn.dataset.name || '', btn.dataset.name || '', '', false);
+            openLightbox(btn.dataset.image, btn.dataset.name || '', btn.dataset.name || '', '', '', false);
         });
     });
 
